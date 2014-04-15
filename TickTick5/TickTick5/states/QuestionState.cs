@@ -6,24 +6,27 @@ using RamGecXNAControlsExtensions;
 
 class QuestionState : GameObjectList
 {
-    Window myWindow;
-    RamGecXNAControls.Button myButton;
-    GUIManager guiManager = new GUIManager(TickTick.game, "Themes", "Default");
+    GUIManager guiManager = new GUIManager(TickTick.game, "Themes", "Default");                         // менеджер контролю усіх елементів
 
     public QuestionState()
     {
         //створюємо вікно
-        myWindow = new Window(new Rectangle(50, 50, 650, 650), "Питання");
-        guiManager.Controls.Add(myWindow);
+        GUIControl myControl = new Window(new Rectangle(50, 50, GameEnvironment.Screen.X-100, GameEnvironment.Screen.Y-100), "Питання");
+        guiManager.Controls.Add(myControl);
 
-        //створюємо кнопки
-        myButton = new RamGecXNAControls.Button(new Rectangle(60, 60, 40, 30), "Cancel","Cancel");
-        myButton.Parent = myWindow;
-        myButton.OnClick += (sender) =>
+        //створюємо кнопку Підтвердити
+        GUIControl myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 - 180, myControl.Bounds.Height - 120, 120, 60), "OK", "OK");
+        myAnotherControl.Hint = "Tooltip text";
+        myControl.Controls.Add(myAnotherControl);
+
+        //створюємо кнопку Cancel
+        myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 + 60, myControl.Bounds.Height - 120, 120, 60), "Cancel", "Cancel");
+        myAnotherControl.OnClick += (sender) =>
         {
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         };
-        guiManager.Controls.Add(myButton);
+        myControl.Controls.Add(myAnotherControl);
+        
     }
 
     //public override void HandleInput(InputHelper inputHelper)
