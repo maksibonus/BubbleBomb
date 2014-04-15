@@ -18,23 +18,18 @@ class WaterDrop : SpriteGameObject
         
     }
 
-
     public override void Update(GameTime gameTime)
     {
-        Window win2;
-        win2 = new Window(new Rectangle(0,0,this.Width,this.Height),"Hello!");
-        win2.Focused = true;
-        win2.Visible = true;
         double t = gameTime.TotalGameTime.TotalSeconds * 3.0f + Position.X;
         bounce = (float)Math.Sin(t) * 0.2f;
         position.Y += bounce;
         Player player = GameWorld.Find("player") as Player;
         if (this.visible && this.CollidesWith(player))
         {
+            GameEnvironment.GameStateManager.SwitchTo("questionState");
             textAboveWater.Visible = false;
             this.visible = false;
             GameEnvironment.AssetManager.PlaySound("Sounds/snd_watercollected");
-        }
-        
+        }    
     }
 }
