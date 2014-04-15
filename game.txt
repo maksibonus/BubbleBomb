@@ -1,0 +1,4 @@
+1. Попытаться заменить наследование GameStateManager : IGameLoopObject, на создание класса без наследования, но с методами IGameLoopObject
+кукукукукукуку
+http://box2dxna.codeplex.com/
+http://neoforce.codeplex.com/
