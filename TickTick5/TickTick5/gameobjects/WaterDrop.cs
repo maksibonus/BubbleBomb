@@ -11,7 +11,7 @@ class WaterDrop : SpriteGameObject
 {
     protected float bounce;
     TextGameObject textAboveWater;
-    GUIManager guiManager = new GUIManager(TickTick.game, "Themes", "Default");                         // менеджер контролю усіх елементів
+    
     GUIControl myControl;                                                                               //вікно
     GUIControl myAnotherControl;                                                                        //елементи управління
 
@@ -27,7 +27,8 @@ class WaterDrop : SpriteGameObject
         bounce = (float)Math.Sin(t) * 0.2f;
         position.Y += bounce;
         Player player = GameWorld.Find("player") as Player;
-        
+        var guiManager = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState).GUIManager;
+
         if (this.visible && this.CollidesWith(player))
         {
             //створюємо вікно
@@ -35,6 +36,9 @@ class WaterDrop : SpriteGameObject
             //myControl.Enabled = true;
             //myControl.Focused = true;
             //myControl.Visible = true;
+
+
+            
             guiManager.Controls.Add(myControl);
 
             //створюємо кнопку "Підтвердити"
@@ -104,10 +108,6 @@ class WaterDrop : SpriteGameObject
     }
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        foreach (var control in guiManager.Controls)
-        {
-            control.Draw(spriteBatch);
-        }
         base.Draw(gameTime, spriteBatch);
     }
 }

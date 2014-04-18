@@ -3,12 +3,14 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using RamGecXNAControls;
 
 class PlayingState : IGameLoopObject
 {
     protected List<Level> levels;
     protected int currentLevelIndex;
     protected ContentManager Content;
+    GUIManager guiManager = new GUIManager(TickTick.game);                         // менеджер контролю усіх елементів
 
     public PlayingState(ContentManager Content)
     {
@@ -17,6 +19,14 @@ class PlayingState : IGameLoopObject
         levels = new List<Level>();
         LoadLevels();
         LoadLevelsStatus(Content.RootDirectory + "/Levels/levels_status.txt");
+    }
+
+    public GUIManager GUIManager
+    {
+        get
+        {
+            return guiManager;
+        }
     }
 
     public Level CurrentLevel
@@ -71,6 +81,7 @@ class PlayingState : IGameLoopObject
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         CurrentLevel.Draw(gameTime, spriteBatch);
+        guiManager.Draw(spriteBatch);
     }
 
     public virtual void Reset()
