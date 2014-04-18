@@ -27,38 +27,42 @@ class WaterDrop : SpriteGameObject
         bounce = (float)Math.Sin(t) * 0.2f;
         position.Y += bounce;
         Player player = GameWorld.Find("player") as Player;
-        var guiManager = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState).GUIManager;
-
-        if (this.visible && this.CollidesWith(player))
+        PlayingState playingState = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState);
+        if (playingState != null)
         {
-            //створюємо вікно
-            myControl = new Window(new Rectangle(50, 50, GameEnvironment.Screen.X - 100, GameEnvironment.Screen.Y - 100), "Питання   іыяхёї");
-            //myControl.Enabled = true;
-            //myControl.Focused = true;
-            //myControl.Visible = true;
+            var guiManager = playingState.GUIManager;
 
-
-            
-            guiManager.Controls.Add(myControl);
-
-            //створюємо кнопку "Підтвердити"
-            myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 - 180, myControl.Bounds.Height - 120, 120, 60), "Підтвердити", "OK");
-            myAnotherControl.Hint = "Tooltip text";
-            myControl.Controls.Add(myAnotherControl);
-
-            //створюємо кнопку "Закрити вікно"
-            myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 + 60, myControl.Bounds.Height - 120, 120, 60), "Закрити вікно", "Cancel");
-            myAnotherControl.OnClick += (sender) =>
+            if (this.visible && this.CollidesWith(player))
             {
-                myControl.Visible = false;
-            };
-            myControl.Controls.Add(myAnotherControl);
-            CreateQuestion();
+                //створюємо вікно
+                myControl = new Window(new Rectangle(50, 50, GameEnvironment.Screen.X - 100, GameEnvironment.Screen.Y - 100), "Питання   іыяхёї");
+                //myControl.Enabled = true;
+                //myControl.Focused = true;
+                //myControl.Visible = true;
 
-            //GameEnvironment.GameStateManager.SwitchTo("questionState");
-            textAboveWater.Visible = false;
-            this.visible = false;
-            GameEnvironment.AssetManager.PlaySound("Sounds/snd_watercollected");
+
+
+                guiManager.Controls.Add(myControl);
+
+                //створюємо кнопку "Підтвердити"
+                myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 - 180, myControl.Bounds.Height - 120, 120, 60), "Підтвердити", "OK");
+                myAnotherControl.Hint = "Tooltip text";
+                myControl.Controls.Add(myAnotherControl);
+
+                //створюємо кнопку "Закрити вікно"
+                myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 + 60, myControl.Bounds.Height - 120, 120, 60), "Закрити вікно", "Cancel");
+                myAnotherControl.OnClick += (sender) =>
+                {
+                    myControl.Visible = false;
+                };
+                myControl.Controls.Add(myAnotherControl);
+                CreateQuestion();
+
+                //GameEnvironment.GameStateManager.SwitchTo("questionState");
+                textAboveWater.Visible = false;
+                this.visible = false;
+                GameEnvironment.AssetManager.PlaySound("Sounds/snd_watercollected");
+            }
         }
         //if (myControl != null)
         //{
@@ -69,9 +73,7 @@ class WaterDrop : SpriteGameObject
         //    myControl.ZIndex = z + 1;
         //    guiManager.Controls.Sort();
         //}
-       
-        foreach (var control in guiManager.Controls)
-            control.Update(gameTime);
+      
         base.Update(gameTime);
     }
     private void CreateQuestion()

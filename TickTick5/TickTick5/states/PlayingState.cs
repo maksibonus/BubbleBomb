@@ -69,6 +69,7 @@ class PlayingState : IGameLoopObject
     public virtual void Update(GameTime gameTime)
     {
         CurrentLevel.Update(gameTime);
+        guiManager.Update(gameTime);
         if (CurrentLevel.GameOver)
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         else if (CurrentLevel.Completed)
@@ -76,6 +77,8 @@ class PlayingState : IGameLoopObject
             CurrentLevel.Solved = true;
             GameEnvironment.GameStateManager.SwitchTo("levelFinishedState");
         }
+
+        
     }
 
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
