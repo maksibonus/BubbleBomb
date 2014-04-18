@@ -63,6 +63,7 @@ class WaterDrop : SpriteGameObject
                 this.visible = false;
                 GameEnvironment.AssetManager.PlaySound("Sounds/snd_watercollected");
             }
+
         }
         //if (myControl != null)
         //{
@@ -73,7 +74,8 @@ class WaterDrop : SpriteGameObject
         //    myControl.ZIndex = z + 1;
         //    guiManager.Controls.Sort();
         //}
-      
+       
+
         base.Update(gameTime);
     }
     private void CreateQuestion()

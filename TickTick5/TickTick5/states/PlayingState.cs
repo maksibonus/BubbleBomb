@@ -69,7 +69,8 @@ class PlayingState : IGameLoopObject
     public virtual void Update(GameTime gameTime)
     {
         CurrentLevel.Update(gameTime);
-        guiManager.Update(gameTime);
+        foreach (var control in guiManager.Controls)
+            control.Update(gameTime);
         if (CurrentLevel.GameOver)
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         else if (CurrentLevel.Completed)
