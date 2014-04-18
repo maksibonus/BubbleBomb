@@ -83,6 +83,7 @@ public class GameObjectGrid : GameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        this.Layer = 100;
         foreach (GameObject obj in grid)
             obj.Draw(gameTime, spriteBatch);
     }

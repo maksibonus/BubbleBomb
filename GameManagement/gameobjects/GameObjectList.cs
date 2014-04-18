@@ -69,6 +69,7 @@ public class GameObjectList : GameObject
     {
         if (!visible)
             return;
+        this.Layer = 100;
         List<GameObject>.Enumerator e = gameObjects.GetEnumerator();        
         while (e.MoveNext())
             e.Current.Draw(gameTime, spriteBatch);

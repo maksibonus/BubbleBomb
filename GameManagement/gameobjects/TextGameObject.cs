@@ -16,6 +16,7 @@ public class TextGameObject : GameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        this.Layer = 100;
         if (visible)
             spriteBatch.DrawString(spriteFont, text, this.GlobalPosition, color);
     }

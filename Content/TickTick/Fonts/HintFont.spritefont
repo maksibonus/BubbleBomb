@@ -12,7 +12,6 @@ with.
     Modify this string to change the font that will be imported.
     -->
     <FontName>Arial</FontName>
-
     <!--
     Size is a float value, measured in points. Modify this value to change
     the size of the font.
@@ -56,8 +55,16 @@ with.
         <End>&#126;</End>
       </CharacterRegion>
 	  <CharacterRegion>
-        <Start>А</Start>
-        <End>я</End>
+        <Start>Ё</Start>
+        <End>ё</End>
+	  </CharacterRegion>
+	  <CharacterRegion>
+        <Start>І</Start>
+        <End>Ї</End>
+	  </CharacterRegion>
+	  <CharacterRegion>
+        <Start>і</Start>
+        <End>ї</End>
 	  </CharacterRegion>
     </CharacterRegions>
   </Asset>

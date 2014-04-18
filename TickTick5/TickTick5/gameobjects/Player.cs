@@ -61,6 +61,7 @@ partial class Player : AnimatedGameObject
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
+        this.Layer = 100;
         if (!finished && isAlive)
         {
             if (isOnTheGround)

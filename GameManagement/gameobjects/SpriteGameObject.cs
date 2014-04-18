@@ -18,6 +18,7 @@ public class SpriteGameObject : GameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        this.Layer = 100;
         if (!visible || sprite == null)
             return;
         sprite.Draw(spriteBatch, this.GlobalPosition, origin);

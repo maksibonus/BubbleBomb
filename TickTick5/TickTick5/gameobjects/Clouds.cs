@@ -17,6 +17,7 @@ class Clouds : GameObjectList
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
+        this.Layer = 100;
         foreach (GameObject obj in gameObjects)
         {
             SpriteGameObject c = obj as SpriteGameObject;

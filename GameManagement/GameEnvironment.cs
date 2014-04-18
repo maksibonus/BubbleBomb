@@ -105,7 +105,8 @@ public class GameEnvironment : Game
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.Black);
-        spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, spriteScale); //Deferred -> рисует пока End() не применим и рисует много SpriteBatch
+        spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, spriteScale);
+        //spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, spriteScale); //Deferred -> рисует пока End() не применим и рисует много SpriteBatch
         gameStateManager.Draw(gameTime, spriteBatch);
         spriteBatch.End();
     }

@@ -24,6 +24,7 @@ class Tile : SpriteGameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        this.Layer = 100;
         if (type == TileType.Background)
             return;
         base.Draw(gameTime, spriteBatch);

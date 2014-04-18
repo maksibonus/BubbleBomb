@@ -27,6 +27,7 @@ class Sparky : AnimatedGameObject
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
+        this.Layer = 100;
         if (idleTime <= 0)
         {
             this.PlayAnimation("electrocute");
