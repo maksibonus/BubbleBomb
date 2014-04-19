@@ -36,17 +36,11 @@ class WaterDrop : SpriteGameObject
             {
                 //створюємо вікно
                 myControl = new Window(new Rectangle(50, 50, GameEnvironment.Screen.X - 100, GameEnvironment.Screen.Y - 100), "Питання   іыяхёї");
-                //myControl.Enabled = true;
-                //myControl.Focused = true;
-                //myControl.Visible = true;
-
-
-
                 guiManager.Controls.Add(myControl);
 
                 //створюємо кнопку "Підтвердити"
                 myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 - 180, myControl.Bounds.Height - 120, 120, 60), "Підтвердити", "OK");
-                myAnotherControl.Hint = "Tooltip text";
+                myAnotherControl.Hint = "Відповісти на питання";
                 myControl.Controls.Add(myAnotherControl);
 
                 //створюємо кнопку "Закрити вікно"
@@ -58,26 +52,15 @@ class WaterDrop : SpriteGameObject
                 myControl.Controls.Add(myAnotherControl);
                 CreateQuestion();
 
-                //GameEnvironment.GameStateManager.SwitchTo("questionState");
                 textAboveWater.Visible = false;
                 this.visible = false;
                 GameEnvironment.AssetManager.PlaySound("Sounds/snd_watercollected");
             }
 
         }
-        //if (myControl != null)
-        //{
-        //    int z = -1;
-        //    foreach (GUIControl control in guiManager.Controls)
-        //        if (control.ZIndex > z)
-        //            z = control.ZIndex;
-        //    myControl.ZIndex = z + 1;
-        //    guiManager.Controls.Sort();
-        //}
-       
-
         base.Update(gameTime);
     }
+
     private void CreateQuestion()
     {
         //створюємо питання
@@ -105,11 +88,8 @@ class WaterDrop : SpriteGameObject
                 i++;
             }
         }
-        myControl.ZIndex = 101;
-        for (i = 0; i < myControl.Controls.Count; i++)
-            myControl.Controls[i].ZIndex = 99;
-        myControl.Controls.Sort();
     }
+
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         base.Draw(gameTime, spriteBatch);

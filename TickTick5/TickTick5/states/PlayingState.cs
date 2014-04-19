@@ -10,7 +10,7 @@ class PlayingState : IGameLoopObject
     protected List<Level> levels;
     protected int currentLevelIndex;
     protected ContentManager Content;
-    GUIManager guiManager = new GUIManager(TickTick.game);                         // менеджер контролю усіх елементів
+    GUIManager guiManager = new GUIManager(TickTick.game);       // менеджер контролю усіх елементів
 
     public PlayingState(ContentManager Content)
     {
@@ -77,9 +77,7 @@ class PlayingState : IGameLoopObject
         {
             CurrentLevel.Solved = true;
             GameEnvironment.GameStateManager.SwitchTo("levelFinishedState");
-        }
-
-        
+        }    
     }
 
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)

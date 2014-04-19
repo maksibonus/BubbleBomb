@@ -70,19 +70,19 @@ public class GameEnvironment : Game
             if (Math.Abs(1 - scaley) < Math.Abs(1 - scalex))
                 finalscale = scaley;
         }
-        //подсчет размера экрана игры
+        //підрахунок розміру екрану гри
         graphics.PreferredBackBufferWidth = (int)(finalscale * screen.X);
         graphics.PreferredBackBufferHeight = (int)(finalscale * screen.Y);
         graphics.IsFullScreen = fullscreen;
         graphics.ApplyChanges();
         inputHelper.Scale = new Vector2((float)GraphicsDevice.Viewport.Width / screen.X,
-                                        (float)GraphicsDevice.Viewport.Height / screen.Y);//?
-        spriteScale = Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);//масштабирование спрайта
+                                        (float)GraphicsDevice.Viewport.Height / screen.Y);
+        spriteScale = Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);//масштабування спрайту
     }
 
     protected override void LoadContent()
     {
-        DrawingHelper.Initialize(this.GraphicsDevice);//класс рендеринга прямоугольного спрайта 
+        DrawingHelper.Initialize(this.GraphicsDevice);//клас рендерингу прямокутного спрайту 
         spriteBatch = new SpriteBatch(GraphicsDevice);
     }
 
@@ -106,7 +106,6 @@ public class GameEnvironment : Game
     {
         GraphicsDevice.Clear(Color.Black);
         spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, spriteScale);
-        //spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, spriteScale); //Deferred -> рисует пока End() не применим и рисует много SpriteBatch
         gameStateManager.Draw(gameTime, spriteBatch);
         spriteBatch.End();
     }

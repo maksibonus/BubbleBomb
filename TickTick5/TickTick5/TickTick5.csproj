@@ -125,7 +125,6 @@
     <Compile Include="states\HelpState.cs" />
     <Compile Include="states\LevelFinishedState.cs" />
     <Compile Include="states\LevelMenuState.cs" />
-    <Compile Include="states\QuestionState.cs" />
     <Compile Include="states\TitleMenuState.cs" />
     <Compile Include="TickTick.cs" />
     <Compile Include="states\PlayingState.cs" />
