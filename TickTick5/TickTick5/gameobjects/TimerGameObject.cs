@@ -10,8 +10,8 @@ class TimerGameObject : TextGameObject
     public TimerGameObject(int layer = 0, string id = "")
         : base("Fonts/Hud", layer, id)
     {
-        this.multiplier = 100;
-        this.timeLeft = TimeSpan.FromMinutes(0.7);
+        this.multiplier = 1000;
+        this.timeLeft = TimeSpan.FromMinutes(2);
         this.running = true;
     }
 
@@ -33,7 +33,7 @@ class TimerGameObject : TextGameObject
     public override void Reset()
     {
         base.Reset();
-        this.timeLeft = TimeSpan.FromMinutes(0.7);
+        this.timeLeft = TimeSpan.FromMinutes(2);
         this.running = true;
     }
 

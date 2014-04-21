@@ -121,6 +121,7 @@
     <Compile Include="level\LevelLoading.cs" />
     <Compile Include="menu\Button.cs" />
     <Compile Include="menu\LevelButton.cs" />
+    <Compile Include="Result.cs" />
     <Compile Include="states\GameOverState.cs" />
     <Compile Include="states\HelpState.cs" />
     <Compile Include="states\LevelFinishedState.cs" />

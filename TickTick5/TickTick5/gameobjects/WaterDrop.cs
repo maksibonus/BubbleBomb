@@ -5,25 +5,26 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.GamerServices;
 using RamGecXNAControls;
 using RamGecXNAControls.ExtendedControls;
+using System.Collections.Generic;
 
 
 class WaterDrop : SpriteGameObject
 {
-    
     TextGameObject textAboveWater;
     GUIControl myControl;                                                                               //вікно
     GUIControl myAnotherControl;                                                                        //елементи управління
     RamGecXNAControls.Button buttonOK;
     int[] answers;
-
+    List<GUIControl> elements;
     protected float bounce;
-    public int result;
+    //public int result;
 
     public WaterDrop(TextGameObject textAboveWater, int layer = 0, string id = "")
         : base("Sprites/spr_water", layer, id) 
     {
         this.textAboveWater = textAboveWater;
-        this.result = 0;
+        this.elements = new List<GUIControl>();
+        //this.result = 0;
     }
 
     public override void Update(GameTime gameTime)
@@ -86,6 +87,7 @@ class WaterDrop : SpriteGameObject
             foreach (GameTests.Answer answer in question.Answers)
             {
                 myAnotherControl = new RadioButton(new Rectangle(40, 70 * i, 20, 20), answer.Text, "answer" + i);
+                elements.Add(myAnotherControl);
                 myControl.Controls.Add(myAnotherControl);
                 i++;
             }
@@ -95,20 +97,21 @@ class WaterDrop : SpriteGameObject
             foreach (GameTests.Answer answer in question.Answers)
             {
                 myAnotherControl = new CheckBox(new Rectangle(40, 70 * i, 20, 20), answer.Text, "answer" + i);
+                elements.Add(myAnotherControl);
                 myControl.Controls.Add(myAnotherControl);
                 i++;
             }
         }
-        this.answers = new int[i];
+        this.answers = new int[i-1];
         buttonOK.OnClick += (sender) =>
         {
             if (question.Answers.RightCount == 1)
             {
-                for (i = 0; i < myAnotherControl.Controls.Count; i++) 
+                for (i = 1; i <= elements.Count; i++) 
                 {
-                    if ((myAnotherControl.GetControl("answer" + i) as RadioButton).Checked)
+                    if ((elements.Find(q=>q.Name=="answer" + i) as RadioButton).Checked)
                     {
-                        answers[0] = i;
+                        answers[0] = i-1;
                         break;
                     }
                 }
@@ -116,18 +119,19 @@ class WaterDrop : SpriteGameObject
             else 
             {
                 int j=0;
-                for (i = 0; i < myAnotherControl.Controls.Count; i++)
+                for (i = 1; i <= elements.Count; i++)
                 {
-                    if ((myAnotherControl.GetControl("answer" + i) as CheckBox).Checked)
+                    //if ((myControl.GetControl("answer" + i) as CheckBox).Checked)
+                    if ((elements.Find(q => q.Name == "answer" + i) as CheckBox).Checked)
                     {
-                        answers[j] = i;
+                        answers[j] = i-1;
                         j++;
                     }
                 }
             }
             GameTests.AnswerInfo info = question.AreRightAnswers(answers);
             if (info.RightAnswersCount == question.Answers.RightCount)
-                result++;
+                Result.result++;
         };
         myControl.Controls.Add(buttonOK);
     }

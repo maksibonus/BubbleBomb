@@ -5,7 +5,7 @@ public class TextGameObject : GameObject
 {
     protected SpriteFont spriteFont;
     protected Color color;
-    protected string text;
+    protected string text="";
 
     public TextGameObject(string assetname, int layer = 0, string id = "")
         : base(layer, id)

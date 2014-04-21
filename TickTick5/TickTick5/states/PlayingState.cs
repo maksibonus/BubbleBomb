@@ -15,12 +15,11 @@ class PlayingState : IGameLoopObject
 
     public PlayingState(ContentManager Content)
     {
-        
         this.Content = Content;
         currentLevelIndex = -1;
         levels = new List<Level>();
         LoadLevels();
-        //LoadLevelsStatus(Content.RootDirectory + "/Levels/levels_status.txt");
+        LoadLevelsStatus(Content.RootDirectory + "/Levels/levels_status.txt");
     }
 
     public GUIManager GUIManager
@@ -81,7 +80,7 @@ class PlayingState : IGameLoopObject
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         else if (CurrentLevel.Completed)
         {
-            //CurrentLevel.Solved = true;
+            CurrentLevel.Solved = true;
             GameEnvironment.GameStateManager.SwitchTo("levelFinishedState");
         }    
     }
@@ -102,7 +101,13 @@ class PlayingState : IGameLoopObject
         CurrentLevel.Reset();
         if (currentLevelIndex >= levels.Count - 1)
             GameEnvironment.GameStateManager.SwitchTo("levelMenu");
-        //WriteLevelsStatus(Content.RootDirectory + "/Levels/levels_status.txt");
+        else
+        {
+            CurrentLevelIndex++;
+            levels[currentLevelIndex].Locked = false;
+        }
+
+        WriteLevelsStatus(Content.RootDirectory + "/Levels/levels_status.txt");
     }
 
     public void LoadLevels()
@@ -111,33 +116,33 @@ class PlayingState : IGameLoopObject
             levels.Add(new Level(currLevel));
     }
 
-    //public void LoadLevelsStatus(string path)
-    //{
-    //    List<string> textlines = new List<string>();
-    //    StreamReader fileReader = new StreamReader(path);
-    //    for (int i = 0; i < levels.Count; i++)
-    //    {
-    //        string line = fileReader.ReadLine();
-    //        string[] elems = line.Split(',');
-    //        if (elems.Length == 2)
-    //        {
-    //            levels[i].Locked = bool.Parse(elems[0]);
-    //            levels[i].Solved = bool.Parse(elems[1]);
-    //        }
-    //    }
-    //    fileReader.Close();
-    //}
+    public void LoadLevelsStatus(string path)
+    {
+        List<string> textlines = new List<string>();
+        StreamReader fileReader = new StreamReader(path);
+        for (int i = 0; i < levels.Count; i++)
+        {
+            string line = fileReader.ReadLine();
+            string[] elems = line.Split(',');
+            if (elems.Length == 2)
+            {
+                levels[i].Locked = bool.Parse(elems[0]);
+                levels[i].Solved = bool.Parse(elems[1]);
+            }
+        }
+        fileReader.Close();
+    }
 
-    //public void WriteLevelsStatus(string path)
-    //{
-    //    // read the lines
-    //    List<string> textlines = new List<string>();
-    //    StreamWriter fileWriter = new StreamWriter(path, false);
-    //    for (int i = 0; i < levels.Count; i++)
-    //    {
-    //        string line = levels[i].Locked.ToString() + "," + levels[i].Solved.ToString();
-    //        fileWriter.WriteLine(line);
-    //    }
-    //    fileWriter.Close();
-    //}
+    public void WriteLevelsStatus(string path)
+    {
+        // read the lines
+        List<string> textlines = new List<string>();
+        StreamWriter fileWriter = new StreamWriter(path, false);
+        for (int i = 0; i < levels.Count; i++)
+        {
+            string line = levels[i].Locked.ToString() + "," + levels[i].Solved.ToString();
+            fileWriter.WriteLine(line);
+        }
+        fileWriter.Close();
+    }
 }

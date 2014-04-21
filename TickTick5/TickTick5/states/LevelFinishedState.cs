@@ -8,7 +8,7 @@ class LevelFinishedState : GameObjectList
     protected IGameLoopObject playingState;
     GUIManager guiManager = new GUIManager(TickTick.game);       // менеджер контролю усіх елементів
     GUIControl myControl;                                                                               //вікно
-    GUIControl myAnotherControl;                                                                        //елементи управління
+    Label myAnotherControl;                                                                        //елементи управління
     RamGecXNAControls.Button buttonOK;
 
     public LevelFinishedState()
@@ -19,7 +19,7 @@ class LevelFinishedState : GameObjectList
         //this.Add(overlay);
 
         //створюємо вікно
-        myControl = new Window(new Rectangle(300, 300, GameEnvironment.Screen.X - 350, GameEnvironment.Screen.Y - 350), "Результат");
+        myControl = new Window(new Rectangle(400, 400, GameEnvironment.Screen.X - 450, GameEnvironment.Screen.Y - 450), "Результат");
         guiManager.Controls.Add(myControl);
 
         //створюємо кнопку "Підтвердити"
@@ -27,13 +27,15 @@ class LevelFinishedState : GameObjectList
         buttonOK.Hint = "Відповісти на питання";
         buttonOK.OnClick += (sender) =>
         {
+
+            GameEnvironment.GameStateManager.SwitchTo("playingState");
+            (playingState as PlayingState).NextLevel();
             myControl.Visible = false;
         };
+        myControl.Controls.Add(buttonOK);
 
         //результат
-        myAnotherControl = new Label(new Rectangle(30, 30, 0, 0), "Ваш результат: ", "Question");
-        myControl.Controls.Add(myAnotherControl);
-
+        myAnotherControl = new Label(new Rectangle(30, 30, 0, 0), "Ваш результат: "+Result.result, "Question");
         myControl.Controls.Add(myAnotherControl);
     }
 
@@ -43,13 +45,15 @@ class LevelFinishedState : GameObjectList
             return;
         GameEnvironment.GameStateManager.SwitchTo("playingState");
         (playingState as PlayingState).NextLevel();
+        base.HandleInput(inputHelper);
     }
-
     public override void Update(GameTime gameTime)
     {
         playingState.Update(gameTime);
         foreach (var control in guiManager.Controls)
             control.Update(gameTime);
+        myAnotherControl.Text = "Ваш результат: " + Result.result;
+        
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
