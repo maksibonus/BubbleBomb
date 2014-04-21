@@ -9,15 +9,21 @@ using RamGecXNAControls.ExtendedControls;
 
 class WaterDrop : SpriteGameObject
 {
-    protected float bounce;
+    
     TextGameObject textAboveWater;
     GUIControl myControl;                                                                               //вікно
     GUIControl myAnotherControl;                                                                        //елементи управління
+    RamGecXNAControls.Button buttonOK;
+    int[] answers;
+
+    protected float bounce;
+    public int result;
 
     public WaterDrop(TextGameObject textAboveWater, int layer = 0, string id = "")
         : base("Sprites/spr_water", layer, id) 
     {
         this.textAboveWater = textAboveWater;
+        this.result = 0;
     }
 
     public override void Update(GameTime gameTime)
@@ -34,14 +40,19 @@ class WaterDrop : SpriteGameObject
             if (this.visible && this.CollidesWith(player))
             {
                 playingState.questionState = true;
+                
                 //створюємо вікно
-                myControl = new Window(new Rectangle(50, 50, GameEnvironment.Screen.X - 100, GameEnvironment.Screen.Y - 100), "Питання   іыяхёї");
+                myControl = new Window(new Rectangle(100, 100, GameEnvironment.Screen.X - 150, GameEnvironment.Screen.Y - 150), "Питання   іыяхёї");
                 guiManager.Controls.Add(myControl);
 
                 //створюємо кнопку "Підтвердити"
-                myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 - 180, myControl.Bounds.Height - 120, 120, 60), "Підтвердити", "OK");
-                myAnotherControl.Hint = "Відповісти на питання";
-                myControl.Controls.Add(myAnotherControl);
+                buttonOK = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 - 180, myControl.Bounds.Height - 120, 120, 60), "Підтвердити", "OK");
+                buttonOK.Hint = "Відповісти на питання";
+                buttonOK.OnClick += (sender) =>
+                {
+                    myControl.Visible = false;
+                    playingState.questionState = false;
+                };
 
                 //створюємо кнопку "Закрити вікно"
                 myAnotherControl = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 + 60, myControl.Bounds.Height - 120, 120, 60), "Закрити вікно", "Cancel");
@@ -88,6 +99,37 @@ class WaterDrop : SpriteGameObject
                 i++;
             }
         }
+        this.answers = new int[i];
+        buttonOK.OnClick += (sender) =>
+        {
+            if (question.Answers.RightCount == 1)
+            {
+                for (i = 0; i < myAnotherControl.Controls.Count; i++) 
+                {
+                    if ((myAnotherControl.GetControl("answer" + i) as RadioButton).Checked)
+                    {
+                        answers[0] = i;
+                        break;
+                    }
+                }
+            }
+            else 
+            {
+                int j=0;
+                for (i = 0; i < myAnotherControl.Controls.Count; i++)
+                {
+                    if ((myAnotherControl.GetControl("answer" + i) as CheckBox).Checked)
+                    {
+                        answers[j] = i;
+                        j++;
+                    }
+                }
+            }
+            GameTests.AnswerInfo info = question.AreRightAnswers(answers);
+            if (info.RightAnswersCount == question.Answers.RightCount)
+                result++;
+        };
+        myControl.Controls.Add(buttonOK);
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

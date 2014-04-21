@@ -10,7 +10,7 @@ class VisibilityTimer : GameObject
         : base(layer, id)
     {
         totaltime = 5;
-        timeleft = 0;
+        timeleft = 40;
         this.target = target;
     }
 

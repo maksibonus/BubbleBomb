@@ -65,15 +65,16 @@ class PlayingState : IGameLoopObject
 
     public virtual void HandleInput(InputHelper inputHelper)
     {
-        TimerGameObject timer = this.Find("timer") as TimerGameObject;
         if (!questionState)
             CurrentLevel.HandleInput(inputHelper);
     }
 
     public virtual void Update(GameTime gameTime)
     {
+        TimerGameObject timer = this.CurrentLevel.Find("timer") as TimerGameObject;
         if (!questionState)
             CurrentLevel.Update(gameTime);
+        timer.Update(gameTime);
         foreach (var control in guiManager.Controls)
             control.Update(gameTime);
         if (CurrentLevel.GameOver)

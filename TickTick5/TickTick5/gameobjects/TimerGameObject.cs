@@ -10,7 +10,7 @@ class TimerGameObject : TextGameObject
     public TimerGameObject(int layer = 0, string id = "")
         : base("Fonts/Hud", layer, id)
     {
-        this.multiplier = 1;
+        this.multiplier = 100;
         this.timeLeft = TimeSpan.FromMinutes(0.7);
         this.running = true;
     }
