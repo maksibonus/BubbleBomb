@@ -2,7 +2,7 @@
 
 partial class Level : GameObjectList
 {
-    protected bool locked, solved;
+    //protected bool locked, solved;
     protected Button quitButton;
 
     public Level(int levelIndex)
@@ -69,16 +69,16 @@ partial class Level : GameObjectList
         }
     }
 
-    public bool Locked
-    {
-        get { return locked; }
-        set { locked = value; }
-    }
+    //public bool Locked
+    //{
+    //    get { return locked; }
+    //    set { locked = value; }
+    //}
 
-    public bool Solved
-    {
-        get { return solved; }
-        set { solved = value; }
-    }
+    //public bool Solved
+    //{
+    //    get { return solved; }
+    //    set { solved = value; }
+    //}
 }
 

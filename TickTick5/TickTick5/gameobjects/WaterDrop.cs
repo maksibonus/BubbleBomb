@@ -11,7 +11,6 @@ class WaterDrop : SpriteGameObject
 {
     protected float bounce;
     TextGameObject textAboveWater;
-    
     GUIControl myControl;                                                                               //вікно
     GUIControl myAnotherControl;                                                                        //елементи управління
 
@@ -34,6 +33,7 @@ class WaterDrop : SpriteGameObject
 
             if (this.visible && this.CollidesWith(player))
             {
+                playingState.questionState = true;
                 //створюємо вікно
                 myControl = new Window(new Rectangle(50, 50, GameEnvironment.Screen.X - 100, GameEnvironment.Screen.Y - 100), "Питання   іыяхёї");
                 guiManager.Controls.Add(myControl);
@@ -48,6 +48,7 @@ class WaterDrop : SpriteGameObject
                 myAnotherControl.OnClick += (sender) =>
                 {
                     myControl.Visible = false;
+                    playingState.questionState = false;
                 };
                 myControl.Controls.Add(myAnotherControl);
                 CreateQuestion();
@@ -56,7 +57,6 @@ class WaterDrop : SpriteGameObject
                 this.visible = false;
                 GameEnvironment.AssetManager.PlaySound("Sounds/snd_watercollected");
             }
-
         }
         base.Update(gameTime);
     }
