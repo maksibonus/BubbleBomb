@@ -82,7 +82,9 @@ class PlayingState : IGameLoopObject
         {
             CurrentLevel.Solved = true;
             GameEnvironment.GameStateManager.SwitchTo("levelFinishedState");
-        }    
+        }
+        //CurrentLevel.Solved = true;
+        //GameEnvironment.GameStateManager.SwitchTo("levelFinishedState");
     }
 
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)

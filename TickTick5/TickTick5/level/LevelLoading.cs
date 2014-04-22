@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework;
 
 partial class Level : GameObjectList
 {
+    public static int countWaterDrop = 0;
+
     public void LoadTiles(string path)
     {
         int width;
@@ -161,10 +163,11 @@ partial class Level : GameObjectList
 
     private Tile LoadWaterTile(int x, int y)
     {
+        countWaterDrop++;
         GameObjectList waterdrops = this.Find("waterdrops") as GameObjectList;
         TileField tiles = this.Find("tiles") as TileField;
         TextGameObject tw = new TextGameObject("Fonts/Hud");
-        tw.Text = "lalala";
+        tw.Text = countWaterDrop.ToString();
         WaterDrop w = new WaterDrop(tw);
         w.Origin = w.Center;
         w.Position = new Vector2(x * tiles.CellWidth, y * tiles.CellHeight - 10);

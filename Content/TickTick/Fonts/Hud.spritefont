@@ -56,8 +56,16 @@ with.
         <End>&#126;</End>
       </CharacterRegion>
 	  <CharacterRegion>
-        <Start>А</Start>
-        <End>я</End>
+        <Start>Ё</Start>
+        <End>ё</End>
+	  </CharacterRegion>
+	  <CharacterRegion>
+        <Start>І</Start>
+        <End>Ї</End>
+	  </CharacterRegion>
+	  <CharacterRegion>
+        <Start>і</Start>
+        <End>ї</End>
 	  </CharacterRegion>
     </CharacterRegions>
   </Asset>
