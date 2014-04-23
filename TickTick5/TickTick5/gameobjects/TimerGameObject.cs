@@ -34,7 +34,7 @@ class TimerGameObject : TextGameObject
     public override void Reset()
     {
         base.Reset();
-        this.timeLeft = TimeSpan.FromMinutes(0.1);
+        this.timeLeft = TimeSpan.FromMinutes(2);
         this.running = true;
     }
 
