@@ -11,7 +11,7 @@ class PlayingState : IGameLoopObject
     protected int currentLevelIndex;
     protected ContentManager Content;
     GUIManager guiManager = new GUIManager(TickTick.game);       // менеджер контролю усіх елементів
-    public bool questionState=false;
+    public bool questionState = false;
 
     public PlayingState(ContentManager Content)
     {
@@ -77,7 +77,9 @@ class PlayingState : IGameLoopObject
         foreach (var control in guiManager.Controls)
             control.Update(gameTime);
         if (CurrentLevel.GameOver)
+        {
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+        }
         else if (CurrentLevel.Completed)
         {
             CurrentLevel.Solved = true;

@@ -1,16 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 
-class VisibilityTimer : GameObject
+class VisibilityTimer : GameObject  //задает время отображения подсказки
 {
     protected GameObject target;
     protected float timeleft;
-    protected float totaltime;
+    //protected float totaltime;
 
     public VisibilityTimer(GameObject target, int layer=0, string id = "")
         : base(layer, id)
     {
-        totaltime = 5;
-        timeleft = 40;
+        //totaltime = 3;
+        timeleft = 3;
         this.target = target;
     }
 
@@ -23,7 +23,7 @@ class VisibilityTimer : GameObject
 
     public void StartVisible()
     {
-        timeleft = totaltime;
+        //timeleft = totaltime;
         target.Visible = true;
     }
 }

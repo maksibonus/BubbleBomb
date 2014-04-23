@@ -11,27 +11,26 @@ using System.Collections.Generic;
 class WaterDrop : SpriteGameObject
 {
     TextGameObject textAboveWater;
-    GUIControl myControl;                                                                               //вікно
+    public static GUIControl myControl;                                                                 //вікно
     GUIControl myAnotherControl;                                                                        //елементи управління
     RamGecXNAControls.Button buttonOK;
     int[] answers;
     List<GUIControl> elements;
     protected float bounce;
-    //public int result;
 
     public WaterDrop(TextGameObject textAboveWater, int layer = 0, string id = "")
         : base("Sprites/spr_water", layer, id) 
     {
         this.textAboveWater = textAboveWater;
         this.elements = new List<GUIControl>();
-        //this.result = 0;
     }
 
     public override void Update(GameTime gameTime)
     {
-        double t = gameTime.TotalGameTime.TotalSeconds * 3.0f + Position.X;
-        bounce = (float)Math.Sin(t) * 0.2f;
-        position.Y += bounce;
+        //?
+        //double t = gameTime.TotalGameTime.TotalSeconds * 3.0f + Position.X;
+        //bounce = (float)Math.Sin(t) * 0.2f;
+        //position.Y += bounce;
         Player player = GameWorld.Find("player") as Player;
         PlayingState playingState = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState);
         if (playingState != null)
@@ -43,7 +42,7 @@ class WaterDrop : SpriteGameObject
                 playingState.questionState = true;
                 
                 //створюємо вікно
-                myControl = new Window(new Rectangle(100, 100, GameEnvironment.Screen.X - 150, GameEnvironment.Screen.Y - 150), "Питання   іыяхёї");
+                myControl = new Window(new Rectangle(100, 100, GameEnvironment.Screen.X - 150, GameEnvironment.Screen.Y - 150), "Питання");
                 guiManager.Controls.Add(myControl);
 
                 //створюємо кнопку "Підтвердити"
@@ -70,7 +69,7 @@ class WaterDrop : SpriteGameObject
                 GameEnvironment.AssetManager.PlaySound("Sounds/snd_watercollected");
             }
         }
-        base.Update(gameTime);
+        //base.Update(gameTime);
     }
 
     private void CreateQuestion()
@@ -105,39 +104,44 @@ class WaterDrop : SpriteGameObject
         this.answers = new int[i-1];
         buttonOK.OnClick += (sender) =>
         {
-            if (question.Answers.RightCount == 1)
-            {
-                for (i = 1; i <= elements.Count; i++) 
+            PlayingState playingState = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState);
+            if (playingState != null)
+            {              
+                if (question.Answers.RightCount == 1)
                 {
-                    if ((elements.Find(q=>q.Name=="answer" + i) as RadioButton).Checked)
+                    for (i = 1; i <= elements.Count; i++)
                     {
-                        answers[0] = i-1;
-                        break;
+                        if (elements.Exists(q => q.Name == "answer" + i))
+                        {
+                            if ((elements.Find(q => q.Name == "answer" + i) as RadioButton).Checked)
+                            {
+                                answers[0] = i - 1;
+                                break;
+                            }
+                        }
                     }
                 }
-            }
-            else 
-            {
-                int j=0;
-                for (i = 1; i <= elements.Count; i++)
+                else
                 {
-                    //if ((myControl.GetControl("answer" + i) as CheckBox).Checked)
-                    if ((elements.Find(q => q.Name == "answer" + i) as CheckBox).Checked)
+                    int j = 0;
+                    for (i = 1; i <= elements.Count; i++)
                     {
-                        answers[j] = i-1;
-                        j++;
+                        if (elements.Exists(q => q.Name == "answer" + i))
+                        {
+                            if ((elements.Find(q => q.Name == "answer" + i) as CheckBox).Checked)
+                            {
+                                answers[j] = i - 1;
+                                j++;
+                            }
+                        }
                     }
                 }
+                GameTests.AnswerInfo info = question.AreRightAnswers(answers);
+                if (info.RightAnswersCount == question.Answers.RightCount)
+                    Result.result++;
             }
-            GameTests.AnswerInfo info = question.AreRightAnswers(answers);
-            if (info.RightAnswersCount == question.Answers.RightCount)
-                Result.result++;
+            elements.Clear();
         };
         myControl.Controls.Add(buttonOK);
-    }
-
-    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-    {
-        base.Draw(gameTime, spriteBatch);
     }
 }

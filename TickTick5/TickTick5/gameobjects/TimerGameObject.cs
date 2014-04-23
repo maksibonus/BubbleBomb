@@ -10,8 +10,7 @@ class TimerGameObject : TextGameObject
     public TimerGameObject(int layer = 0, string id = "")
         : base("Fonts/Hud", layer, id)
     {
-        this.multiplier = 1000;
-        this.timeLeft = TimeSpan.FromMinutes(2);
+        this.multiplier = 1;
         this.running = true;
     }
 
@@ -19,7 +18,9 @@ class TimerGameObject : TextGameObject
     {
         if (!running)
             return;
-        double totalSeconds = gameTime.ElapsedGameTime.TotalSeconds * multiplier;
+        double totalSeconds = gameTime.ElapsedGameTime.TotalSeconds * 0.6 * multiplier;
+        if (WaterDrop.myControl != null && WaterDrop.myControl.Visible)
+            totalSeconds = gameTime.ElapsedGameTime.TotalSeconds * 1.1 * multiplier;
         timeLeft -= TimeSpan.FromSeconds(totalSeconds);
         if (timeLeft.Ticks < 0)
             return;
@@ -33,7 +34,7 @@ class TimerGameObject : TextGameObject
     public override void Reset()
     {
         base.Reset();
-        this.timeLeft = TimeSpan.FromMinutes(2);
+        this.timeLeft = TimeSpan.FromMinutes(0.1);
         this.running = true;
     }
 

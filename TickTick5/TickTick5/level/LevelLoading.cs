@@ -4,9 +4,9 @@ using Microsoft.Xna.Framework;
 
 partial class Level : GameObjectList
 {
-    public static int countWaterDrop = 0;
+    public static int[] countWaterDrop = new int[10];
 
-    public void LoadTiles(string path)
+    public void LoadTiles(string path,int levelIndex)
     {
         int width;
         List<string> textlines = new List<string>();
@@ -28,7 +28,7 @@ partial class Level : GameObjectList
         hintfield.Add(hint_frame);
         TextGameObject hintText = new TextGameObject("Fonts/HintFont", 2);
         hintText.Text = textlines[textlines.Count - 1];
-        hintText.Position = new Vector2(120, 25);
+        hintText.Position = new Vector2(230, 30);
         hintText.Color = Color.Black;
         hintfield.Add(hintText);
         VisibilityTimer hintTimer = new VisibilityTimer(hintfield, 1, "hintTimer");
@@ -40,12 +40,12 @@ partial class Level : GameObjectList
         for (int x = 0; x < width; ++x)
             for (int y = 0; y < textlines.Count - 1; ++y)
             {
-                Tile t = LoadTile(textlines[y][x], x, y);
+                Tile t = LoadTile(textlines[y][x], x, y,levelIndex);
                 tiles.Add(t, x, y);
             }
     }
 
-    private Tile LoadTile(char tileType, int x, int y)
+    private Tile LoadTile(char tileType, int x, int y, int levelIndex)
     {
         switch (tileType)
         {
@@ -60,7 +60,7 @@ partial class Level : GameObjectList
             case 'X':
                 return LoadEndTile(x, y);
             case 'W':
-                return LoadWaterTile(x, y);
+                return LoadWaterTile(x, y,levelIndex);
             case '1':
                 return LoadStartTile(x, y);
             case '#':
@@ -161,13 +161,13 @@ partial class Level : GameObjectList
         return new Tile();
     }
 
-    private Tile LoadWaterTile(int x, int y)
+    private Tile LoadWaterTile(int x, int y,int levelIndex)
     {
-        countWaterDrop++;
+        countWaterDrop[levelIndex-1]++;
         GameObjectList waterdrops = this.Find("waterdrops") as GameObjectList;
         TileField tiles = this.Find("tiles") as TileField;
         TextGameObject tw = new TextGameObject("Fonts/Hud");
-        tw.Text = countWaterDrop.ToString();
+        tw.Text = countWaterDrop[levelIndex - 1].ToString();
         WaterDrop w = new WaterDrop(tw);
         w.Origin = w.Center;
         w.Position = new Vector2(x * tiles.CellWidth, y * tiles.CellHeight - 10);

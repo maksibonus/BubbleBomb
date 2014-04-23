@@ -73,13 +73,12 @@ partial class Player : AnimatedGameObject
                 this.PlayAnimation("jump");
 
             TimerGameObject timer = GameWorld.Find("timer") as TimerGameObject;
-            //if (walkingOnHot)
-            //    timer.Multiplier = 2;
-            //else if (walkingOnIce)
-            //    timer.Multiplier = 0.5;
-            //else
-            //    timer.Multiplier = 1;
-            timer.Multiplier = 0.5;
+            if (walkingOnHot)
+                timer.Multiplier = 1.3f;
+            else if (walkingOnIce)
+                timer.Multiplier = 0.7f;
+            else
+                timer.Multiplier = 1f;
             TileField tiles = GameWorld.Find("tiles") as TileField;
             if (BoundingBox.Top >= tiles.Rows * tiles.CellHeight)
                 this.Die(true);

@@ -40,7 +40,7 @@ partial class Level : GameObjectList
         this.Add(new GameObjectList(1, "waterdrops"));
         this.Add(new GameObjectList(2, "enemies"));
 
-        this.LoadTiles("Content/Levels/" + levelIndex + ".txt");
+        this.LoadTiles("Content/Levels/" + levelIndex + ".txt",levelIndex);
     }
 
     public bool Completed

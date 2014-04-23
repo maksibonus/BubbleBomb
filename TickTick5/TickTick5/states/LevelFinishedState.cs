@@ -20,7 +20,7 @@ class LevelFinishedState : GameObjectList
         this.Add(overlay); //720 412
 
         //створюємо вікно
-        myControl = new Window(new Rectangle(GameEnvironment.Screen.X / 2 - 125, GameEnvironment.Screen.Y / 2 + 25, GameEnvironment.Screen.X / 2 - 350, GameEnvironment.Screen.Y / 2 - 250), "Результат");
+        myControl = new Window(new Rectangle(GameEnvironment.Screen.X / 2 - 175, GameEnvironment.Screen.Y / 2 + 150, GameEnvironment.Screen.X / 2 - 350, GameEnvironment.Screen.Y / 2 - 300), "Результат");
         guiManager.Controls.Add(myControl);
 
         //створюємо кнопку "Підтвердити"
@@ -36,8 +36,7 @@ class LevelFinishedState : GameObjectList
         //myControl.Controls.Add(buttonOK);
 
         //результат
-        string text = "Ваш результат: "+Result.result + " из "+Level.countWaterDrop+ "балов.";
-        myAnotherControl = new Label(new Rectangle(30, 30, 0, 0), text, "Question");
+        myAnotherControl = new Label(new Rectangle(30, 30, 0, 0), "Ваш результат: " + Result.result + " з " + Level.countWaterDrop[LevelMenuState.curLevel] + " балів.", "Question");
         myControl.Controls.Add(myAnotherControl);
     }
 
@@ -45,8 +44,9 @@ class LevelFinishedState : GameObjectList
     {
         if (!inputHelper.KeyPressed(Keys.Space))
             return;
-        GameEnvironment.GameStateManager.SwitchTo("playingState");
+        Result.result = 0;
         (playingState as PlayingState).NextLevel();
+        GameEnvironment.GameStateManager.SwitchTo("playingState");
         base.HandleInput(inputHelper);
     }
     public override void Update(GameTime gameTime)
@@ -54,7 +54,7 @@ class LevelFinishedState : GameObjectList
         playingState.Update(gameTime);
         foreach (var control in guiManager.Controls)
             control.Update(gameTime);
-        myAnotherControl.Text = "Ваш результат: " + Result.result;
+        myAnotherControl.Text = "Ваш результат: " + Result.result + " з " + Level.countWaterDrop[LevelMenuState.curLevel] + " балів.";
         
     }
 

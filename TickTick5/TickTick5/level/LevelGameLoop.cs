@@ -20,15 +20,15 @@ partial class Level : GameObjectList
         TimerGameObject timer = this.Find("timer") as TimerGameObject;
         Player player = this.Find("player") as Player;
 
-        // check if we died
+        // cперевірка на те, що ми померли
         if (!player.IsAlive)
             timer.Running = false;
 
-        // check if we ran out of time
+        // перевірка на те, що ми вичерпали час
         if (timer.GameOver)
             player.Explode();
                        
-        // check if we won
+        // перевірка на те, що ми виграли
         if (this.Completed && timer.Running)
         {
             player.LevelFinished();

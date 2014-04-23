@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 class LevelMenuState : GameObjectList
 {
     protected Button backButton;
+    static public int curLevel;
 
     public LevelMenuState()
     {
@@ -52,6 +53,7 @@ class LevelMenuState : GameObjectList
         {
             PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
             playingState.CurrentLevelIndex = LevelSelected - 1;
+            curLevel = playingState.CurrentLevelIndex;
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
         else if (backButton.Pressed)
