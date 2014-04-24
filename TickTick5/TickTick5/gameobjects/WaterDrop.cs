@@ -28,10 +28,10 @@ class WaterDrop : SpriteGameObject
 
     public override void Update(GameTime gameTime)
     {
-        //?
-        //double t = gameTime.TotalGameTime.TotalSeconds * 3.0f + Position.X;
-        //bounce = (float)Math.Sin(t) * 0.2f;
-        //position.Y += bounce;
+        //рух каплі догори та донизу
+        double t = gameTime.TotalGameTime.TotalSeconds * 3.0f + Position.X;
+        bounce = (float)Math.Sin(t) * 0.2f;
+        position.Y += bounce;
         Player player = GameWorld.Find("player") as Player;
         PlayingState playingState = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState);
         if (playingState != null)
@@ -105,9 +105,10 @@ class WaterDrop : SpriteGameObject
        
         buttonOK.OnClick += (sender) =>
         {
+            List<int> answersIndexes = new List<int>();
             PlayingState playingState = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState);
             if (playingState != null)
-            {              
+            {
                 if (question.Answers.RightCount == 1)
                 {
                     for (i = 1; i <= elements.Count; i++)
@@ -116,12 +117,7 @@ class WaterDrop : SpriteGameObject
                         {
                             if ((elements.Find(q => q.Name == "answer" + i) as RadioButton).Checked)
                             {
-                                if (!enter)
-                                {
-                                    this.answers = new int[i - 1];
-                                    enter = !enter;
-                                }
-                                answers[0] = i - 1;
+                                answersIndexes.Add(i - 1);
                                 break;
                             }
                         }
@@ -136,20 +132,14 @@ class WaterDrop : SpriteGameObject
                         {
                             if ((elements.Find(q => q.Name == "answer" + i) as CheckBox).Checked)
                             {
-                                if (!enter)
-                                {
-                                    this.answers = new int[i - 1];
-                                    enter = !enter;
-                                }
-                                answers[j] = i - 1;
+                                answersIndexes.Add(i - 1);
                                 j++;
                             }
-
                         }
                     }
                 }
-                GameTests.AnswerInfo info = question.AreRightAnswers(answers);
-                if (info.RightAnswersCount == question.Answers.RightCount && info.RightAnswersCount!=0)
+                GameTests.AnswerInfo info = question.AreRightAnswers(answersIndexes.ToArray());
+                if (info.RightAnswersCount == question.Answers.RightCount && info.WrongAnswersCount == 0)
                     Result.result++;
             }
             elements.Clear();
