@@ -29,9 +29,10 @@ class WaterDrop : SpriteGameObject
     public override void Update(GameTime gameTime)
     {
         //рух каплі догори та донизу
-        double t = gameTime.TotalGameTime.TotalSeconds * 3.0f + Position.X;
-        bounce = (float)Math.Sin(t) * 0.2f;
+        double t = gameTime.TotalGameTime.TotalSeconds * 5.0f + Position.X;
+        bounce = (float)Math.Sin(t) * 0.4f;
         position.Y += bounce;
+
         Player player = GameWorld.Find("player") as Player;
         PlayingState playingState = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState);
         if (playingState != null)
