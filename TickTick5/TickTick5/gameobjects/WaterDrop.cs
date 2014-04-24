@@ -17,6 +17,7 @@ class WaterDrop : SpriteGameObject
     int[] answers;
     List<GUIControl> elements;
     protected float bounce;
+    bool enter=false;
 
     public WaterDrop(TextGameObject textAboveWater, int layer = 0, string id = "")
         : base("Sprites/spr_water", layer, id) 
@@ -37,7 +38,7 @@ class WaterDrop : SpriteGameObject
         {
             var guiManager = playingState.GUIManager;
 
-            if (this.visible && this.CollidesWith(player))
+            if (this.visible && this.CollidesWith(player) && playingState.questionState==false)
             {
                 playingState.questionState = true;
                 
@@ -101,7 +102,7 @@ class WaterDrop : SpriteGameObject
                 i++;
             }
         }
-        this.answers = new int[i-1];
+       
         buttonOK.OnClick += (sender) =>
         {
             PlayingState playingState = (GameEnvironment.GameStateManager.CurrentGameState as PlayingState);
@@ -115,6 +116,11 @@ class WaterDrop : SpriteGameObject
                         {
                             if ((elements.Find(q => q.Name == "answer" + i) as RadioButton).Checked)
                             {
+                                if (!enter)
+                                {
+                                    this.answers = new int[i - 1];
+                                    enter = !enter;
+                                }
                                 answers[0] = i - 1;
                                 break;
                             }
@@ -130,14 +136,20 @@ class WaterDrop : SpriteGameObject
                         {
                             if ((elements.Find(q => q.Name == "answer" + i) as CheckBox).Checked)
                             {
+                                if (!enter)
+                                {
+                                    this.answers = new int[i - 1];
+                                    enter = !enter;
+                                }
                                 answers[j] = i - 1;
                                 j++;
                             }
+
                         }
                     }
                 }
                 GameTests.AnswerInfo info = question.AreRightAnswers(answers);
-                if (info.RightAnswersCount == question.Answers.RightCount)
+                if (info.RightAnswersCount == question.Answers.RightCount && info.RightAnswersCount!=0)
                     Result.result++;
             }
             elements.Clear();
