@@ -1,0 +1,23 @@
+<RamGecXNAControls.GUIManager>
+  <RamGecXNAControls.Window Name="Demo Window" Bounds="{X:300 Y:300 Width:360 Height:400}" Visible="True" Enabled="True" Transparency="1" Hint="" Title="RamGec XNA Controls Demo" Movable="True">
+    <RamGecXNAControls.Label Name="" Bounds="{X:180 Y:40 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Name:" />
+    <RamGecXNAControls.TextBox Name="" Bounds="{X:180 Y:60 Width:160 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="John Doe" NumbersOnly="False" AlphaNumericOnly="False" PasswordField="False" PasswordMask="*" />
+    <RamGecXNAControls.Image Name="UserImage" Bounds="{X:20 Y:40 Width:128 Height:128}" Visible="True" Enabled="True" Transparency="1" Hint="">
+      <RamGecXNAControls.Label Name="" Bounds="{X:0 Y:136 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Privileges:" />
+    </RamGecXNAControls.Image>
+    <RamGecXNAControls.Label Name="" Bounds="{X:180 Y:90 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Password:" />
+    <RamGecXNAControls.TextBox Name="" Bounds="{X:180 Y:110 Width:160 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="RamGecControls" NumbersOnly="False" AlphaNumericOnly="False" PasswordField="True" PasswordMask="*" />
+    <RamGecXNAControls.GroupBox Name="" Bounds="{X:180 Y:200 Width:160 Height:140}" Visible="True" Enabled="True" Transparency="1" Hint="" Title="Options">
+      <RamGecXNAControls.CheckBox Name="" Bounds="{X:10 Y:20 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="HD Graphics" Checked="True" AutoCheck="True" />
+      <RamGecXNAControls.CheckBox Name="" Bounds="{X:10 Y:40 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Full Screen" Checked="False" AutoCheck="True" />
+      <RamGecXNAControls.CheckBox Name="" Bounds="{X:10 Y:60 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Autostart" Checked="True" AutoCheck="True" />
+      <RamGecXNAControls.CheckBox Name="" Bounds="{X:10 Y:80 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Invert Mouse" Checked="False" AutoCheck="True" />
+    </RamGecXNAControls.GroupBox>
+    <RamGecXNAControls.RadioButton Name="" Bounds="{X:250 Y:148 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Male" Checked="True" Group="0" AutoCheck="True" />
+    <RamGecXNAControls.RadioButton Name="" Bounds="{X:250 Y:168 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Female" Checked="False" Group="0" AutoCheck="True" />
+    <RamGecXNAControls.Label Name="" Bounds="{X:180 Y:146 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Gender:" />
+    <RamGecXNAControls.ListBox Name="" Bounds="{X:20 Y:200 Width:150 Height:140}" Visible="True" Enabled="True" Transparency="1" Hint="" MultipleSelection="True" Items="Open Files	Modify Files	Delete Files	Change Password	Add Users	Ban Users	Change Options	Create Rules	Start Applications	Change System Settings	Perform Actions	" />
+    <RamGecXNAControls.Button Name="OKButton" Bounds="{X:240 Y:360 Width:100 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="OK" />
+    <RamGecXNAControls.Button Name="CloseButton" Bounds="{X:20 Y:360 Width:100 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Close" />
+  </RamGecXNAControls.Window>
+</RamGecXNAControls.GUIManager>

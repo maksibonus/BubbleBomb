@@ -1,0 +1,17 @@
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Themes\Default\theme.xml
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Window Designer.exe
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Window Designer.pdb
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\RamGec XNA Controls.dll
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\RamGec XNA Controls.pdb
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\obj\x86\Release\ResolveAssemblyReference.cache
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\obj\x86\Release\Window Designer.exe
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\obj\x86\Release\Window Designer.pdb
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\RamGec XNA Controls.xml
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Content\controls.xml
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Themes\Default\skin.xnb
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Themes\Default\font.xnb
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Content\logo.xnb
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Themes\DefaultGreen\skin.xnb
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Themes\DefaultGreen\font.xnb
+C:\as\code\RamGec XNA Controls\Window Designer\Window Designer\bin\x86\Release\Themes\DefaultGreen\theme.xml

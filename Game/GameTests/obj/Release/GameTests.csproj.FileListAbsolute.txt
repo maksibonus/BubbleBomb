@@ -1,0 +1,5 @@
+D:\GitHub\BubbleBomb\TickTick5\GameTests\bin\Release\gametest.xml
+D:\GitHub\BubbleBomb\TickTick5\GameTests\bin\Release\GameTests.dll
+D:\GitHub\BubbleBomb\TickTick5\GameTests\bin\Release\GameTests.pdb
+D:\GitHub\BubbleBomb\TickTick5\GameTests\obj\Release\GameTests.dll
+D:\GitHub\BubbleBomb\TickTick5\GameTests\obj\Release\GameTests.pdb

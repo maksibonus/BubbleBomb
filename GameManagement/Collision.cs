@@ -1,7 +1,18 @@
 ﻿using Microsoft.Xna.Framework;
 
+/// <summary>
+/// Клас, що обробляє колізії
+/// </summary>
 public class Collision
 {
+    #region Методи
+
+    /// <summary>
+    /// Віповідає за колізії між об'єктами гри.
+    /// </summary>
+    /// <param name="rectA">Перший об'єкт.</param>
+    /// <param name="rectB">Другий об'єкт.</param>
+    /// <returns>Точку перетину об'єктів.</returns>
     public static Vector2 CalculateIntersectionDepth(Rectangle rectA, Rectangle rectB)
     {
         Vector2 minDistance = new Vector2(rectA.Width + rectB.Width,
@@ -21,6 +32,12 @@ public class Collision
         return depth;
     }
 
+    /// <summary>
+    /// Віповідає за колізії між об'єктами гри.
+    /// </summary>
+    /// <param name="rectA">Перший об'єкт.</param>
+    /// <param name="rectB">Другий об'єкт.</param>
+    /// <returns>Прямокутник перетину об'єктів.</returns>
     public static Rectangle Intersection(Rectangle rect1, Rectangle rect2)
     {
         int xmin = (int)MathHelper.Max(rect1.Left, rect2.Left);
@@ -29,5 +46,6 @@ public class Collision
         int ymax = (int)MathHelper.Min(rect1.Bottom, rect2.Bottom);
         return new Rectangle(xmin, ymin, xmax - xmin, ymax - ymin);
     }
-}
 
+    #endregion Методи
+}

@@ -1,0 +1,42 @@
+<RamGecXNAControls.GUIManager Version="1.0.402.227">
+  <RamGecXNAControls.Window Name="Window" Bounds="{X:10 Y:10 Width:380 Height:320}" Visible="True" Enabled="True" Transparency="1" Hint="" Title="Window Designer" Movable="True" TitleColor="72, 77, 77" TopMost="False">
+    <RamGecXNAControls.TabsContainer Name="" Bounds="{X:10 Y:30 Width:360 Height:270}" Visible="True" Enabled="True" Transparency="1" Hint="" ActiveTabColor="64, 64, 64" InactiveTabColor="245, 245, 245" CurrentTab="0">
+      <RamGecXNAControls.TabControl Name="" Bounds="{X:0 Y:24 Width:360 Height:270}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Controls">
+        <RamGecXNAControls.GroupBox Name="" Bounds="{X:10 Y:-10 Width:160 Height:220}" Visible="True" Enabled="True" Transparency="1" Hint="" Title="GroupBox Title" TitleColor="64, 64, 64">
+          <RamGecXNAControls.ListBox Name="ControlsList" Bounds="{X:10 Y:20 Width:140 Height:120}" Visible="True" Enabled="True" Transparency="1" Hint="" MultipleSelection="False" ItemColor="36, 36, 36" SelectedItemColor="36, 36, 36" Items="Button	Chart	GroupBox	CheckBox	Image	Label	ListBox	Progress	RadioButton	TabsContainer	TextArea	TextBox	" />
+          <RamGecXNAControls.Button Name="AddControlButton" Bounds="{X:10 Y:150 Width:140 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Add Control" AutoSize="False" TextColor="36, 36, 36" />
+          <RamGecXNAControls.Button Name="RemoveControlButton" Bounds="{X:10 Y:180 Width:140 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Remove Control" AutoSize="False" TextColor="36, 36, 36" />
+        </RamGecXNAControls.GroupBox>
+        <RamGecXNAControls.GroupBox Name="" Bounds="{X:180 Y:70 Width:170 Height:140}" Visible="True" Enabled="True" Transparency="1" Hint="" Title="Options" TitleColor="64, 64, 64">
+          <RamGecXNAControls.CheckBox Name="ShowStatisticsBox" Bounds="{X:10 Y:20 Width:140 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="Show Additional Information" Text="Show Statistics" Checked="False" AutoCheck="True" AutoSize="False" TextColor="64, 64, 64" />
+          <RamGecXNAControls.CheckBox Name="FloatingControlsBox" Bounds="{X:10 Y:40 Width:140 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Floating Controls" Checked="True" AutoCheck="True" AutoSize="False" TextColor="64, 64, 64" />
+          <RamGecXNAControls.CheckBox Name="SnapToGridBox" Bounds="{X:10 Y:60 Width:140 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Snap to Grid" Checked="True" AutoCheck="True" AutoSize="False" TextColor="64, 64, 64" />
+          <RamGecXNAControls.CheckBox Name="ShowGridBox" Bounds="{X:10 Y:80 Width:140 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Show Grid" Checked="False" AutoCheck="True" AutoSize="False" TextColor="64, 64, 64" />
+          <RamGecXNAControls.Label Name="" Bounds="{X:10 Y:102 Width:60 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Grid Size:" AutoSize="False" TextColor="64, 64, 64" />
+          <RamGecXNAControls.TextBox Name="GridSizeBox" Bounds="{X:90 Y:100 Width:60 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="10" NumbersOnly="True" AlphaNumericOnly="False" PasswordField="False" PasswordMask="*" TextColor="64, 64, 64" CursorChar="|" />
+        </RamGecXNAControls.GroupBox>
+        <RamGecXNAControls.GroupBox Name="" Bounds="{X:180 Y:-10 Width:170 Height:60}" Visible="True" Enabled="True" Transparency="1" Hint="" Title="Window" TitleColor="64, 64, 64">
+          <RamGecXNAControls.Button Name="ResetWindowButton" Bounds="{X:10 Y:20 Width:150 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Reset Window" AutoSize="False" TextColor="36, 36, 36" />
+        </RamGecXNAControls.GroupBox>
+      </RamGecXNAControls.TabControl>
+      <RamGecXNAControls.TabControl Name="" Bounds="{X:0 Y:24 Width:360 Height:270}" Visible="False" Enabled="True" Transparency="1" Hint="" Text="Save/Load">
+        <RamGecXNAControls.GroupBox Name="" Bounds="{X:10 Y:-10 Width:330 Height:60}" Visible="True" Enabled="True" Transparency="1" Hint="" Title="Save/Load XML File" TitleColor="64, 64, 64">
+          <RamGecXNAControls.Button Name="LoadButton" Bounds="{X:10 Y:20 Width:140 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Load from file..." AutoSize="False" TextColor="36, 36, 36" />
+          <RamGecXNAControls.Button Name="SaveButton" Bounds="{X:180 Y:20 Width:140 Height:24}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Save to file..." AutoSize="False" TextColor="36, 36, 36" />
+        </RamGecXNAControls.GroupBox>
+        <RamGecXNAControls.GroupBox Name="" Bounds="{X:10 Y:60 Width:330 Height:150}" Visible="True" Enabled="True" Transparency="1" Hint="" Title="Themes" TitleColor="64, 64, 70">
+          <RamGecXNAControls.ListBox Name="ThemesList" Bounds="{X:10 Y:20 Width:310 Height:120}" Visible="True" Enabled="True" Transparency="1" Hint="" MultipleSelection="False" ItemColor="36, 36, 36" SelectedItemColor="36, 36, 36" Items="" />
+        </RamGecXNAControls.GroupBox>
+      </RamGecXNAControls.TabControl>
+      <RamGecXNAControls.TabControl Name="" Bounds="{X:0 Y:24 Width:360 Height:270}" Visible="False" Enabled="True" Transparency="1" Hint="" Text="About">
+        <RamGecXNAControls.Image Name="LogoImage" Bounds="{X:20 Y:0 Width:128 Height:128}" Visible="True" Enabled="True" Transparency="1" Hint="" />
+        <RamGecXNAControls.Label Name="" Bounds="{X:210 Y:-10 Width:100 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Window Designer" AutoSize="False" TextColor="64, 64, 64" />
+        <RamGecXNAControls.Label Name="" Bounds="{X:20 Y:130 Width:220 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="created using RamGec XNA Controls" AutoSize="False" TextColor="64, 64, 64" />
+        <RamGecXNAControls.Label Name="" Bounds="{X:20 Y:150 Width:200 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="by Ramunas Geciauskas" AutoSize="False" TextColor="64, 64, 64" />
+        <RamGecXNAControls.Label Name="" Bounds="{X:20 Y:170 Width:200 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="http://www.geciauskas.com" AutoSize="False" TextColor="64, 64, 64" />
+        <RamGecXNAControls.Label Name="" Bounds="{X:20 Y:190 Width:200 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="http://xnacontrols.codeplex.com" AutoSize="False" TextColor="64, 64, 64" />
+        <RamGecXNAControls.Label Name="" Bounds="{X:210 Y:10 Width:200 Height:16}" Visible="True" Enabled="True" Transparency="1" Hint="" Text="Version: 1.0.0.1" AutoSize="False" TextColor="64, 64, 64" />
+      </RamGecXNAControls.TabControl>
+    </RamGecXNAControls.TabsContainer>
+  </RamGecXNAControls.Window>
+</RamGecXNAControls.GUIManager>

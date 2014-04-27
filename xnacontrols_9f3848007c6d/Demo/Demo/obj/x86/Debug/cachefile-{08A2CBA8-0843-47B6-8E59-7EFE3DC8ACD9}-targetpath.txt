@@ -1,0 +1,3 @@
+Content\user.xnb
+Content\demo_window.xml
+Content\test_window.xml
