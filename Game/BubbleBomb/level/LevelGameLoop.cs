@@ -14,6 +14,8 @@ partial class Level : GameObjectList
         if (quitButton.Pressed)
         {
             this.Reset();
+            GameEnvironment.AssetManager.StopMusic();
+            GameEnvironment.AssetManager.PlayMusic("Sounds/Legend Of Zelda - Zelda's lullaby (Original)");
             GameEnvironment.GameStateManager.SwitchTo("levelMenu");
         }      
     }

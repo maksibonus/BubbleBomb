@@ -452,14 +452,24 @@
       <Time>2014-04-22T20:20:17.359+03:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\snd_music.mp3</Source>
-      <Name>Sounds\snd_music</Name>
+      <Source>Sounds\Legend Of Zelda - Zelda's lullaby (Original).mp3</Source>
+      <Name>Sounds\Legend Of Zelda - Zelda's lullaby (Original)</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\GitHub\BubbleBomb\Game\BubbleBomb\bin\x86\Debug\Content\Sounds\snd_music.xnb</Output>
-      <Extra>D:\GitHub\BubbleBomb\Game\BubbleBomb\bin\x86\Debug\Content\Sounds\snd_music.wma</Extra>
-      <Time>2014-04-15T16:07:35.7733912+03:00</Time>
+      <Output>D:\GitHub\BubbleBomb\Game\BubbleBomb\bin\x86\Debug\Content\Sounds\Legend Of Zelda - Zelda's lullaby (Original).xnb</Output>
+      <Extra>D:\GitHub\BubbleBomb\Game\BubbleBomb\bin\x86\Debug\Content\Sounds\Legend Of Zelda - Zelda's lullaby (Original).wma</Extra>
+      <Time>2014-04-15T16:07:35.7463721+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Chipzel - Focus.mp3</Source>
+      <Name>Sounds\Chipzel - Focus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GitHub\BubbleBomb\Game\BubbleBomb\bin\x86\Debug\Content\Sounds\Chipzel - Focus.xnb</Output>
+      <Extra>D:\GitHub\BubbleBomb\Game\BubbleBomb\bin\x86\Debug\Content\Sounds\Chipzel - Focus.wma</Extra>
+      <Time>2014-04-15T16:07:35.7263592+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

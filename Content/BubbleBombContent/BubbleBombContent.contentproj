@@ -404,17 +404,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sounds\snd_music.mp3">
-      <Name>snd_music</Name>
+    <ProjectReference Include="..\..\xnacontrols_9f3848007c6d\RamGec XNA Controls\RamGec XNA Controls.csproj">
+      <Project>{E7CA3538-0526-4D6E-BE66-384A39A207DB}</Project>
+      <Name>RamGec XNA Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sounds\Legend Of Zelda - Zelda%27s lullaby %28Original%29.mp3">
+      <Name>Legend Of Zelda - Zelda%27s lullaby %28Original%29</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\xnacontrols_9f3848007c6d\RamGec XNA Controls\RamGec XNA Controls.csproj">
-      <Project>{E7CA3538-0526-4D6E-BE66-384A39A207DB}</Project>
-      <Name>RamGec XNA Controls</Name>
-    </ProjectReference>
+    <Compile Include="Sounds\Chipzel - Focus.mp3">
+      <Name>Chipzel - Focus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

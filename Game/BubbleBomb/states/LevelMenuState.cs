@@ -33,6 +33,8 @@ class LevelMenuState : GameObjectList
             PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
             playingState.CurrentLevelIndex = LevelSelected - 1;
             curLevel = playingState.CurrentLevelIndex;
+            GameEnvironment.AssetManager.StopMusic();
+            GameEnvironment.AssetManager.PlayMusic("Sounds/Chipzel - Focus");
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
         else if (backButton.Pressed)

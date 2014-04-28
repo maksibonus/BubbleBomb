@@ -76,5 +76,13 @@ public class AssetManager
         MediaPlayer.Play(contentManager.Load<Song>(assetName));
     }
 
+    /// <summary>
+    /// Зупиняє музичну доріжку.
+    /// </summary>
+    public void StopMusic()
+    {
+        MediaPlayer.Stop();
+    }
+
     #endregion Методи
 }

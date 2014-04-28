@@ -48,7 +48,7 @@ class BubbleBomb : GameEnvironment
         gameStateManager.AddGameState("levelFinishedState", new LevelFinishedState());
         gameStateManager.SwitchTo("titleMenu");
 
-        //AssetManager.PlayMusic("Sounds/snd_music");
+        AssetManager.PlayMusic("Sounds/Legend Of Zelda - Zelda's lullaby (Original)");
     }
 
     /// <summary>
