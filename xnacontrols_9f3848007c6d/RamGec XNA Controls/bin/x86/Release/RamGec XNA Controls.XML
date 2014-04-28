@@ -1094,9 +1094,14 @@
             Label Control
             </summary>
         </member>
-        <member name="F:RamGecXNAControls.Label.Text">
+        <member name="F:RamGecXNAControls.Label.text">
             <summary>
             Label Text
+            </summary>
+        </member>
+        <member name="F:RamGecXNAControls.Label.Lines">
+            <summary>
+            List of lines
             </summary>
         </member>
         <member name="F:RamGecXNAControls.Label.AutoSize">
@@ -1136,6 +1141,12 @@
             Perform AutoSize
             </summary>
         </member>
+        <member name="M:RamGecXNAControls.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Places lines of the rectangle
+            </summary>
+            
+        </member>
         <member name="P:RamGecXNAControls.Label.Font">
             <summary>
             Default Font
@@ -1144,6 +1155,11 @@
         <member name="P:RamGecXNAControls.Label.TextColor">
             <summary>
             Text color
+            </summary>
+        </member>
+        <member name="P:RamGecXNAControls.Label.Text">
+            <summary>
+            Formatted text
             </summary>
         </member>
         <member name="T:RamGecXNAControls.Image">

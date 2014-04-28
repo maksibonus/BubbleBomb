@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
 using RamGecXNAControls;
+using System.Collections.Generic;
 
 /// <summary>
 /// Клас запуску гри.
@@ -48,7 +49,7 @@ class BubbleBomb : GameEnvironment
         gameStateManager.AddGameState("levelFinishedState", new LevelFinishedState());
         gameStateManager.SwitchTo("titleMenu");
 
-        AssetManager.PlayMusic("Sounds/Legend Of Zelda - Zelda's lullaby (Original)");
+        //AssetManager.PlayMusic("Sounds/Legend Of Zelda - Zelda's lullaby (Original)");
     }
 
     /// <summary>

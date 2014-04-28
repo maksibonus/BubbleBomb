@@ -18,7 +18,7 @@ public class GameEnvironment : Game
     /// <summary>
     /// Включає в себе групу спрайтів для відображення з однаковими параметрами.
     /// </summary>
-    protected SpriteBatch spriteBatch;
+    public SpriteBatch spriteBatch;
 
     /// <summary>
     /// Відповідає за обробку клавіш.

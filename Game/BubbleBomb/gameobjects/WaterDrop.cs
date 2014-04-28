@@ -25,6 +25,11 @@ class WaterDrop : SpriteGameObject
     GUIControl myAnotherControl;
 
     /// <summary>
+    /// Елементи вікна.
+    /// </summary>
+    Label questionLabel;
+
+    /// <summary>
     /// Кнопка "Підтвердити".
     /// </summary>
     RamGecXNAControls.Button buttonOK;
@@ -117,8 +122,11 @@ class WaterDrop : SpriteGameObject
     {
         //створюємо питання
         GameTests.Question question = GameTests.TestManager.GetRandomQuestion();
-        myAnotherControl = new Label(new Rectangle(30, 30, 0, 0), question.Text, "Question");
-        myControl.Controls.Add(myAnotherControl);
+        //myAnotherControl = new Label(new Rectangle(30, 30, 80, 200), question.Text, "Question");
+        questionLabel = new Label(new Rectangle(30, 30, myControl.Bounds.Width - 30, 200));
+        questionLabel.Font = myAnotherControl.Theme.LabelFont;
+        questionLabel.Text = question.Text;
+        myControl.Controls.Add(questionLabel);
 
         //створюємо відповіді на питання
         int i = 1;
@@ -127,7 +135,7 @@ class WaterDrop : SpriteGameObject
         {
             foreach (GameTests.Answer answer in question.Answers)
             {
-                myAnotherControl = new RadioButton(new Rectangle(40, 70 * i, 20, 20), answer.Text, "answer" + i);
+                myAnotherControl = new RadioButton(new Rectangle(40, 70 * i + 30, 20, 20), answer.Text, "answer" + i);
                 elements.Add(myAnotherControl);
                 myControl.Controls.Add(myAnotherControl);
                 i++;
@@ -137,7 +145,7 @@ class WaterDrop : SpriteGameObject
         {
             foreach (GameTests.Answer answer in question.Answers)
             {
-                myAnotherControl = new CheckBox(new Rectangle(40, 70 * i, 20, 20), answer.Text, "answer" + i);
+                myAnotherControl = new CheckBox(new Rectangle(40, 70 * i + 30, 20, 20), answer.Text, "answer" + i);
                 elements.Add(myAnotherControl);
                 myControl.Controls.Add(myAnotherControl);
                 i++;

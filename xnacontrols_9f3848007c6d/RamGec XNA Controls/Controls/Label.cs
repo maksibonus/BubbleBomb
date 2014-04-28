@@ -26,6 +26,7 @@
 
 using System;
 using System.Xml;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RamGecXNAControlsExtensions;
@@ -41,7 +42,12 @@ namespace RamGecXNAControls
         /// <summary>
         /// Label Text
         /// </summary>
-        public string Text = String.Empty;
+        private string text = String.Empty;
+
+        /// <summary>
+        /// List of lines
+        /// </summary>
+        public List<string> Lines;
 
         /// <summary>
         /// Default Font
@@ -67,6 +73,33 @@ namespace RamGecXNAControls
         /// If set, Width and Bound is updated automatically
         /// </summary>
         public bool AutoSize = false;
+
+        /// <summary>
+        /// Formatted text
+        /// </summary>
+        public string Text
+        {
+            get { return text; }
+            set
+            {
+                text = value;
+                Lines.Clear();
+                string curLine = "";
+                for (int i = 0; i < text.Length && Lines.Count < 3; i++)
+                {
+                    curLine += text[i];
+                    if (Font.MeasureString(curLine).X >= Font.MeasureString(text).X)
+                    {
+                        Lines.Add(curLine);
+                        curLine = "";
+                    }
+                }
+
+                if (curLine != "")
+                    Lines.Add(curLine);
+                //    Lines.Reverse();
+            }
+        }
         #endregion
 
         #region Constructors
@@ -82,8 +115,8 @@ namespace RamGecXNAControls
             // if bounds not set - treat it as AutoSize
             if (bounds.Width <= 0 || bounds.Height <= 0)
                 AutoSize = true;
-   
-            Text = text;
+            this.Lines = new List<string>();
+            this.text = text;
             Name = name;
         }
 
@@ -113,6 +146,7 @@ namespace RamGecXNAControls
         public Label(XmlNode xmlNode)
             : base(xmlNode)
         {
+            this.Lines = new List<string>();
         }
         #endregion
 
@@ -152,6 +186,26 @@ namespace RamGecXNAControls
             Bounds.Width = (int)textSize.X;
             Bounds.Height = (int)textSize.Y;
         }
+
+        /// <summary>
+        /// Places lines of the rectangle
+        /// </summary>
+        /// 
+        //если что мерять размер строки, и если он превышает рахмер ректангла переносить на следующую
+        //private void DoNewLine()
+        //{
+        //    Vector2 textSize = Font.MeasureString(Text);
+        //    float widthText = textSize.X;
+        //    while (widthText > 0)
+        //    {
+        //        if (Bounds.Width < (int)textSize.X)
+        //        {
+                    
+        //            Text.Insert(Bounds.Width, Environment.NewLine);
+        //        }
+        //        widthText -= Bounds.Width;
+        //    }
+        //}
         #endregion
 
         #region Draw and Update
@@ -163,12 +217,19 @@ namespace RamGecXNAControls
             if (AutoSize)
                 DoAutoSize();
 
+            //if (AutoNewLine)
+            //    DoNewLine();
             // cache
             Rectangle bounds = AbsoluteBounds;
             Color tint = (_textColor ?? Theme.LabelTintColor[(int)state]) * Transparency;
 
             // draw text
-            spriteBatch.DrawString(Font, Text, new Vector2(bounds.X, bounds.Y), tint);
+            for (int index = 0; index < Lines.Count; index++)
+            {
+                string line = Lines[index];
+                spriteBatch.DrawString(_font, line, new Vector2(bounds.X, bounds.Y + Font.MeasureString(line).Y * index), Color.Black);
+            }
+            //spriteBatch.DrawString(Font, Text, new Vector2(bounds.X, bounds.Y), tint);
 
             base.Draw(spriteBatch);
         }

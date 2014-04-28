@@ -3,3 +3,9 @@ D:\GitHub\BubbleBomb\TickTick5\GameTests\bin\Release\GameTests.dll
 D:\GitHub\BubbleBomb\TickTick5\GameTests\bin\Release\GameTests.pdb
 D:\GitHub\BubbleBomb\TickTick5\GameTests\obj\Release\GameTests.dll
 D:\GitHub\BubbleBomb\TickTick5\GameTests\obj\Release\GameTests.pdb
+D:\GitHub\BubbleBomb\Game\GameTests\bin\Release\gametest.xml
+D:\GitHub\BubbleBomb\Game\GameTests\bin\Release\GameTests.dll
+D:\GitHub\BubbleBomb\Game\GameTests\bin\Release\GameTests.pdb
+D:\GitHub\BubbleBomb\Game\GameTests\obj\Release\GameTests.csprojResolveAssemblyReference.cache
+D:\GitHub\BubbleBomb\Game\GameTests\obj\Release\GameTests.dll
+D:\GitHub\BubbleBomb\Game\GameTests\obj\Release\GameTests.pdb
