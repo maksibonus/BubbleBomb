@@ -88,7 +88,7 @@ namespace RamGecXNAControls
                 for (int i = 0; i < text.Length && Lines.Count < 3; i++)
                 {
                     curLine += text[i];
-                    if (Font.MeasureString(curLine).X >= Font.MeasureString(text).X)
+                    if (Font.MeasureString(curLine).X >= Bounds.Width)
                     {
                         Lines.Add(curLine);
                         curLine = "";
