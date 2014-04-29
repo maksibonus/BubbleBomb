@@ -1109,6 +1109,11 @@
             If set, Width and Bound is updated automatically
             </summary>
         </member>
+        <member name="F:RamGecXNAControls.Label.AutoNewLine">
+            <summary>
+            If set, the text into lines
+            </summary>
+        </member>
         <member name="M:RamGecXNAControls.Label.#ctor(Microsoft.Xna.Framework.Rectangle,System.String,System.String)">
             <summary>
             Creates a Label control

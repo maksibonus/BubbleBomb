@@ -75,6 +75,11 @@ namespace RamGecXNAControls
         public bool AutoSize = false;
 
         /// <summary>
+        /// If set, the text into lines
+        /// </summary>
+        public bool AutoNewLine = false;
+
+        /// <summary>
         /// Formatted text
         /// </summary>
         public string Text
@@ -224,12 +229,16 @@ namespace RamGecXNAControls
             Color tint = (_textColor ?? Theme.LabelTintColor[(int)state]) * Transparency;
 
             // draw text
-            for (int index = 0; index < Lines.Count; index++)
+            if (AutoNewLine)
             {
-                string line = Lines[index];
-                spriteBatch.DrawString(_font, line, new Vector2(bounds.X, bounds.Y + Font.MeasureString(line).Y * index), Color.Black);
+                for (int index = 0; index < Lines.Count; index++)
+                {
+                    string line = Lines[index];
+                    spriteBatch.DrawString(_font, line, new Vector2(bounds.X, bounds.Y + Font.MeasureString(line).Y * index), Color.Black);
+                }
             }
-            //spriteBatch.DrawString(Font, Text, new Vector2(bounds.X, bounds.Y), tint);
+            else
+                spriteBatch.DrawString(Font, Text, new Vector2(bounds.X, bounds.Y), tint);
 
             base.Draw(spriteBatch);
         }

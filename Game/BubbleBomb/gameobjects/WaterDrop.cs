@@ -69,8 +69,13 @@ class WaterDrop : SpriteGameObject
             if (this.visible && this.CollidesWith(player) && playingState.questionState==false)
             {
                 playingState.questionState = true;
-                myControl = new Window(new Rectangle(100, 100, GameEnvironment.Screen.X - 150, GameEnvironment.Screen.Y - 150), "Питання");
+                myControl = new Window(new Rectangle(125, 125, GameEnvironment.Screen.X - 200, GameEnvironment.Screen.Y - 200), "Питання");
                 guiManager.Controls.Add(myControl);
+
+                // задаємо зображення
+                Image myImage = new Image(new Rectangle(myControl.Bounds.Width - 100, myControl.Bounds.Height - 100, 100, 100));
+                myImage.Texture = guiManager.Theme.IconHome;
+                myControl.Controls.Add(myImage);
 
                 buttonOK = new RamGecXNAControls.Button(new Rectangle(myControl.Bounds.Width / 2 - 180, myControl.Bounds.Height - 120, 120, 60), "Підтвердити", "OK");
                 buttonOK.Hint = "Відповісти на питання";
@@ -122,9 +127,9 @@ class WaterDrop : SpriteGameObject
     {
         //створюємо питання
         GameTests.Question question = GameTests.TestManager.GetRandomQuestion();
-        //myAnotherControl = new Label(new Rectangle(30, 30, 80, 200), question.Text, "Question");
-        questionLabel = new Label(new Rectangle(30, 30, myControl.Bounds.Width - 30, 200));
+        questionLabel = new Label(new Rectangle(30, 30, myControl.Bounds.Width - 70, 200));
         questionLabel.Font = myAnotherControl.Theme.LabelFont;
+        questionLabel.AutoNewLine = true;
         questionLabel.Text = question.Text;
         myControl.Controls.Add(questionLabel);
 
@@ -135,7 +140,7 @@ class WaterDrop : SpriteGameObject
         {
             foreach (GameTests.Answer answer in question.Answers)
             {
-                myAnotherControl = new RadioButton(new Rectangle(40, 70 * i + 30, 20, 20), answer.Text, "answer" + i);
+                myAnotherControl = new RadioButton(new Rectangle(40, 70 * i + 50, 20, 20), answer.Text, "answer" + i);
                 elements.Add(myAnotherControl);
                 myControl.Controls.Add(myAnotherControl);
                 i++;
@@ -145,7 +150,7 @@ class WaterDrop : SpriteGameObject
         {
             foreach (GameTests.Answer answer in question.Answers)
             {
-                myAnotherControl = new CheckBox(new Rectangle(40, 70 * i + 30, 20, 20), answer.Text, "answer" + i);
+                myAnotherControl = new CheckBox(new Rectangle(40, 70 * i + 50, 20, 20), answer.Text, "answer" + i);
                 elements.Add(myAnotherControl);
                 myControl.Controls.Add(myAnotherControl);
                 i++;
