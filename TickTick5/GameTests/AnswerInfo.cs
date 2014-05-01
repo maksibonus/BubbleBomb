@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GameTests
+﻿namespace GameTests
 {
     /// <summary>
     /// Структура, що містить інформацію про кількість правильних та неправильних відповідей.
@@ -26,11 +21,15 @@ namespace GameTests
 
         #region Конструктори
 
-        // Ініціалізує поля структури переданими значеннями.
-        public AnswerInfo(int _rightCount, int _wrongCount)
+        /// <summary>
+        /// Ініціалізує поля структури переданими значеннями.
+        /// </summary>
+        /// <param name="rightCount">Кількість правильних відповідей.</param>
+        /// <param name="wrongCount">Кількість неправильних відповідей.</param>
+        internal AnswerInfo(int rightCount, int wrongCount)
         {
-            rightAnswersCount = _rightCount;
-            wrongAnswersCount = _wrongCount;
+            rightAnswersCount = rightCount;
+            wrongAnswersCount = wrongCount;
         }
 
         #endregion Конструктори
@@ -42,14 +41,8 @@ namespace GameTests
         /// </summary>
         public int RightAnswersCount
         {
-            internal set
-            {
-                rightAnswersCount = value;
-            }
-            get
-            {
-                return rightAnswersCount;
-            }
+            get { return rightAnswersCount; }
+            internal set { rightAnswersCount = value; }
         }
 
         /// <summary>
@@ -57,14 +50,8 @@ namespace GameTests
         /// </summary>
         public int WrongAnswersCount
         {
-            internal set
-            {
-                wrongAnswersCount = value;
-            }
-            get
-            {
-                return wrongAnswersCount;
-            }
+            get { return wrongAnswersCount; }
+            internal set { wrongAnswersCount = value; }
         }
 
         /// <summary>
@@ -72,10 +59,7 @@ namespace GameTests
         /// </summary>
         public int AnswersCount
         {
-            get
-            {
-                return rightAnswersCount + wrongAnswersCount;
-            }
+            get { return rightAnswersCount + wrongAnswersCount; }
         }
 
         #endregion Властивості

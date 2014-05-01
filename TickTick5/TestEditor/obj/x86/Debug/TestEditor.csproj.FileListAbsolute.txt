@@ -1,0 +1,13 @@
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\bin\Debug\TestEditor.exe
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\bin\Debug\TestEditor.pdb
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\obj\x86\Debug\TestEditor.MainForm.resources
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\obj\x86\Debug\TestEditor.Properties.Resources.resources
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\obj\x86\Debug\TestEditor.csproj.GenerateResource.Cache
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\obj\x86\Debug\TestEditor.exe
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\obj\x86\Debug\TestEditor.pdb
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\obj\x86\Debug\TestEditor.csprojResolveAssemblyReference.cache
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\obj\x86\Debug\TestEditor.AnswerControl.resources
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\bin\Debug\GameTests.dll
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\bin\Debug\GameTests.pdb
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\bin\Debug\TestEditor.exe.config
+C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\TestEditor\obj\x86\Debug\TestEditor.AskPasswordForm.resources

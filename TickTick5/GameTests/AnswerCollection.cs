@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Collections;
 
 namespace GameTests
@@ -16,12 +13,7 @@ namespace GameTests
         /// <summary>
         /// Список відповідей.
         /// </summary>
-        List<Answer> answers;
-
-        /// <summary>
-        /// Кількість правильних відповідей.
-        /// </summary>
-        int rightCount;
+        readonly List<Answer> answers;
 
         /// <summary>
         /// Індекс, що використовується інтерфейсом IEnumerator.
@@ -58,10 +50,7 @@ namespace GameTests
 
         public object Current
         {
-            get
-            {
-                return answers[index];
-            }
+            get { return answers[index]; }
         }
 
         #endregion Реалізація інтерфейсів
@@ -69,12 +58,11 @@ namespace GameTests
         #region Конструктори
 
         /// <summary>
-        /// Ініціалізує поля класу початковими значеннями за замовчуванням.
+        /// Ініціалізує новий екземпляр класу значеннями за замовчуванням.
         /// </summary>
-        public AnswerCollection()
+        internal AnswerCollection()
         {
             answers = new List<Answer>();
-            rightCount = 0;
             index = -1;
         }
 
@@ -89,10 +77,7 @@ namespace GameTests
         /// <returns>Відповідь за вказаним номером.</returns>
         public Answer this[int i]
         {
-            get
-            {
-                return answers[i];
-            }
+            get { return answers[i]; }
         }
 
         /// <summary>
@@ -120,10 +105,7 @@ namespace GameTests
         /// </summary>
         public int Count
         {
-            get
-            {
-                return answers.Count;
-            }
+            get { return answers.Count; }
         }
 
         /// <summary>
@@ -133,6 +115,10 @@ namespace GameTests
         {
             get
             {
+                int rightCount = 0;
+                foreach (Answer answer in answers)
+                    if (answer.IsRight)
+                        rightCount++;
                 return rightCount;
             }
         }
@@ -148,8 +134,6 @@ namespace GameTests
         internal void Add(Answer answer)
         {
             answers.Add(answer);
-            if (answer.IsRight)
-                rightCount++;
         }
 
         /// <summary>
@@ -170,6 +154,14 @@ namespace GameTests
         public int IndexOf(string answerText)
         {
             return answers.IndexOf(this[answerText]);
+        }
+
+        /// <summary>
+        /// Видаляє усі запитання із колекції.
+        /// </summary>
+        internal void Clear()
+        {
+            answers.Clear();
         }
 
         #endregion Методи

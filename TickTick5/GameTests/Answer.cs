@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GameTests
+﻿namespace GameTests
 {
     /// <summary>
     /// Клас відповіді на запитання.
@@ -27,12 +22,23 @@ namespace GameTests
         #region Конструктори
 
         /// <summary>
-        /// Ініціалізує поля класу початковими значеннями за замовчуванням.
+        /// Ініціалізує новий екземпляр класу значеннями за замовчуванням.
         /// </summary>
         public Answer()
         {
             text = "";
             isRight = false;
+        }
+
+        /// <summary>
+        /// Ініціалізує новий екземпляр класу переданими значеннями.
+        /// </summary>
+        /// <param name="text">Текст відповіді.</param>
+        /// <param name="isRight">Прапорець, чи є відповідь вірною.</param>
+        public Answer(string text, bool isRight)
+        {
+            this.text = text ?? "";
+            this.isRight = isRight;
         }
 
         #endregion Конструктори
@@ -44,14 +50,8 @@ namespace GameTests
         /// </summary>
         public string Text
         {
-            internal set
-            {
-                text = value;
-            }
-            get
-            {
-                return text;
-            }
+            get { return text; }
+            internal set { text = value; }
         }
 
         /// <summary>
@@ -59,14 +59,8 @@ namespace GameTests
         /// </summary>
         public bool IsRight
         {
-            internal set
-            {
-                isRight = value;
-            }
-            get
-            {
-                return isRight;
-            }
+            get { return isRight; }
+            internal set { isRight = value; }
         }
 
         #endregion Властивості

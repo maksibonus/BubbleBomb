@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestEditor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NewQuestionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Нове запитання</Value>
+    </Setting>
+    <Setting Name="RemoveQuestionMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ви впевнені, що бажаєте видалити запитання?</Value>
+    </Setting>
+    <Setting Name="FileNotFoundMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Створено порожній файл, так як файл із запитаннями відсутній.</Value>
+    </Setting>
+    <Setting Name="FileIsCorruptedMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Замінити пошкоджений файл порожнім? В разі відмови програма буде зачинена.</Value>
+    </Setting>
+    <Setting Name="QuestionTextIsEmptyMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Текст запитання не може бути порожнім.</Value>
+    </Setting>
+    <Setting Name="AnswerTextIsEmptyMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Текст відповіді не може бути порожнім.</Value>
+    </Setting>
+    <Setting Name="QuestionHasNoAnswerMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Запитання не може не мати жодної відповіді.</Value>
+    </Setting>
+    <Setting Name="QuestionHasNoRightAnswer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Запитання не може не мати жодної правильної відповіді.</Value>
+    </Setting>
+    <Setting Name="HasChangesMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Внесені зміни не були збережені. Зберегти внесені зміни?</Value>
+    </Setting>
+    <Setting Name="ApplicationExitMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Програма буде зачинена.</Value>
+    </Setting>
+    <Setting Name="AdditionalInfoMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Додаткова інформація:</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C++1983</Value>
+    </Setting>
+    <Setting Name="IncorrectPasswordMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Пароль невірний. Закривайте програму і не намагайтеся надурити викладача ;)</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

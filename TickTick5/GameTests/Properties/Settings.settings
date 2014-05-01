@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GameTests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EncryptionKey" Type="System.Byte" Scope="Application">
+      <Value Profile="(Default)">88</Value>
+    </Setting>
+    <Setting Name="LevelCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="FilePrefix" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">leveltest_</Value>
+    </Setting>
+    <Setting Name="RootElement" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">test</Value>
+    </Setting>
+    <Setting Name="QuestionElement" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">question</Value>
+    </Setting>
+    <Setting Name="AnswerElement" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">answer</Value>
+    </Setting>
+    <Setting Name="AnswerRightAttribute" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">right</Value>
+    </Setting>
+    <Setting Name="AnswerRightValue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">true</Value>
+    </Setting>
+    <Setting Name="QuestionTextAttribute" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">text</Value>
+    </Setting>
+    <Setting Name="TestFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\georgeukrainian\Documents\GitHub\BubbleBomb\TickTick5\GameTests\tests</Value>
+    </Setting>
+    <Setting Name="FileNotFoundExceptionMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Файл із запитаннями {0} не знайдено.</Value>
+    </Setting>
+    <Setting Name="PathNotFoundExceptionMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Шлях {0}, за яким мають зберігатися запитання, не знайдено.</Value>
+    </Setting>
+    <Setting Name="FileIsCorruptedExceptionMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Структура файлу {0} не є вірною. Ймовіно, були внесені зміни вручну, що пошкодило інформацію в файлі.</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

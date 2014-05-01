@@ -43,19 +43,26 @@
     <Compile Include="Answer.cs" />
     <Compile Include="AnswerCollection.cs" />
     <Compile Include="AnswerInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionCollection.cs" />
     <Compile Include="QuestionType.cs" />
+    <Compile Include="TestFileIsCorruptedException.cs" />
+    <Compile Include="TestFileNotFoundException.cs" />
     <Compile Include="TestManager.cs" />
+    <Compile Include="TestPathNotFoundException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="gametest.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

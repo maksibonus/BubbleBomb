@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GameTests
+﻿namespace GameTests
 {
     /// <summary>
     /// Клас, що зберігає в собі запитання та відповіді на нього.
@@ -20,14 +15,14 @@ namespace GameTests
         /// <summary>
         /// Колекція відповідей на запитання.
         /// </summary>
-        AnswerCollection answers;
+        readonly AnswerCollection answers;
 
         #endregion Поля класу
 
         #region Конструктори
 
         /// <summary>
-        /// Ініціалізує поля класу початковими значеннями за замовчуванням.
+        /// Ініціалізує новий екземпляр класу значеннями за замовчуванням.
         /// </summary>
         public Question()
         {
@@ -44,14 +39,8 @@ namespace GameTests
         /// </summary>
         public string Text
         {
-            internal set
-            {
-                text = value;
-            }
-            get
-            {
-                return text;
-            }
+            get { return text; }
+            internal set { text = value; }
         }
 
         /// <summary>
@@ -59,10 +48,7 @@ namespace GameTests
         /// </summary>
         public QuestionType Type
         {
-            get
-            {
-                return answers.RightCount > 1 ? QuestionType.CheckBox : QuestionType.RadioButton;
-            }
+            get { return answers.RightCount > 1 ? QuestionType.CheckBox : QuestionType.RadioButton; }
         }
 
         /// <summary>
@@ -70,10 +56,7 @@ namespace GameTests
         /// </summary>
         public AnswerCollection Answers
         {
-            get
-            {
-                return answers;
-            }
+            get { return answers; }
         }
 
         #endregion Властивості
@@ -107,14 +90,11 @@ namespace GameTests
         /// <returns>Структура, що містить інформацію про кількість правильних та неправильних відповідей.</returns>
         public AnswerInfo AreRightAnswers(int[] answersIndexes)
         {
-            AnswerInfo answerInfo = new AnswerInfo();
-
-            answerInfo.RightAnswersCount = 0;
-            answerInfo.WrongAnswersCount = 0;
+            AnswerInfo answerInfo = new AnswerInfo(0, 0);
 
             foreach (int answerIndex in answersIndexes)
             {
-                if (this.answers[answerIndex].IsRight)
+                if (answers[answerIndex].IsRight)
                     answerInfo.RightAnswersCount++;
                 else
                     answerInfo.WrongAnswersCount++;
@@ -130,14 +110,11 @@ namespace GameTests
         /// <returns>Структура, що містить інформацію про кількість правильних та неправильних відповідей.</returns>
         public AnswerInfo AreRightAnswers(string[] answersTextStrings)
         {
-            AnswerInfo answerInfo = new AnswerInfo();
-
-            answerInfo.RightAnswersCount = 0;
-            answerInfo.WrongAnswersCount = 0;
+            AnswerInfo answerInfo = new AnswerInfo(0, 0);
 
             foreach (string answerText in answersTextStrings)
             {
-                if (this.answers[answerText].IsRight)
+                if (answers[answerText].IsRight)
                     answerInfo.RightAnswersCount++;
                 else
                     answerInfo.WrongAnswersCount++;
@@ -153,10 +130,7 @@ namespace GameTests
         /// <returns>Структура, що містить інформацію про кількість правильних та неправильних відповідей.</returns>
         public AnswerInfo AreRightAnswers(Answer[] answerArray)
         {
-            AnswerInfo answerInfo = new AnswerInfo();
-
-            answerInfo.RightAnswersCount = 0;
-            answerInfo.WrongAnswersCount = 0;
+            AnswerInfo answerInfo = new AnswerInfo(0, 0);
 
             foreach (Answer answer in answerArray)
             {
@@ -167,6 +141,22 @@ namespace GameTests
             }
 
             return answerInfo;
+        }
+
+        /// <summary>
+        /// Оновлює текст запитання і відповіді на нього згідно переданих параметрів.
+        /// </summary>
+        /// <param name="questionText">Новий текст запитання.</param>
+        /// <param name="questionAnswers">Нові відповіді на запитання.</param>
+        public void Update(string questionText, Answer[] questionAnswers)
+        {
+            text = questionText ?? "";
+            answers.Clear();
+
+            if (questionAnswers == null) return;
+
+            foreach (Answer answer in questionAnswers)
+                answers.Add(answer);
         }
 
         #endregion Методи

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Collections;
 
 namespace GameTests
@@ -16,17 +14,17 @@ namespace GameTests
         /// <summary>
         /// Список запитань.
         /// </summary>
-        List<Question> questions;
+        readonly List<Question> questions;
 
         /// <summary>
         /// Список номерів тих запитань, які ще не були поставлені користувачу.
         /// </summary>
-        List<int> unusedQuestionNumbers;
+        readonly List<int> unusedQuestionNumbers;
 
         /// <summary>
         /// Генератор псевдовипадкових чисел.
         /// </summary>
-        Random random;
+        readonly Random random;
 
         /// <summary>
         /// Індекс, що використовується інтерфейсом IEnumerator.
@@ -63,10 +61,7 @@ namespace GameTests
 
         public object Current
         {
-            get
-            {
-                return questions[index];
-            }
+            get { return questions[index]; }
         }
 
         #endregion Реалізація інтерфейсів
@@ -74,9 +69,9 @@ namespace GameTests
         #region Конструктори
 
         /// <summary>
-        /// Ініціалізує поля класу початковими значеннями за замовчуванням.
+        /// Ініціалізує новий екземпляр класу значеннями за замовчуванням.
         /// </summary>
-        public QuestionCollection()
+        internal QuestionCollection()
         {
             questions = new List<Question>();
             unusedQuestionNumbers = new List<int>();
@@ -95,10 +90,7 @@ namespace GameTests
         /// <returns>Запитання за вказаним номером.</returns>
         public Question this[int i]
         {
-            get
-            {
-                return questions[i];
-            }
+            get { return questions[i]; }
         }
 
         #endregion Індексатори
@@ -110,10 +102,7 @@ namespace GameTests
         /// </summary>
         public int Count
         {
-            get
-            {
-                return questions.Count;
-            }
+            get { return questions.Count; }
         }
 
         #endregion Властивості
@@ -124,9 +113,32 @@ namespace GameTests
         /// Додає запитання до колекції.
         /// </summary>
         /// <param name="question">Запитання, яке необхідно додати до колекції.</param>
-        internal void Add(Question question)
+        public void Add(Question question)
         {
             questions.Add(question);
+            unusedQuestionNumbers.Clear();
+        }
+
+        /// <summary>
+        /// Видаляє запитання з колекції.
+        /// </summary>
+        /// <param name="question">Запитання, яке необхідно видалити.</param>
+        public void Remove(Question question)
+        {
+            if (!questions.Contains(question)) return;
+
+            questions.Remove(question);
+            unusedQuestionNumbers.Clear();
+        }
+
+        /// <summary>
+        /// Видаляє запитання з колекції за вказаним індексом.
+        /// </summary>
+        /// <param name="questionIndex">Індекс запитання, яке необхідно видалити.</param>
+        public void RemoveAt(int questionIndex)
+        {
+            questions.RemoveAt(questionIndex);
+            unusedQuestionNumbers.Clear();
         }
 
         /// <summary>

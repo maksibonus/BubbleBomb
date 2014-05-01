@@ -1,13 +1,10 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Media;
-using RamGecXNAControls;
 
 class TickTick : GameEnvironment
 {
     static public TickTick game;
     static void Main()
     {
-        GameTests.TestManager.Initialize();
         game = new TickTick();
         game.Run();
     }
@@ -15,7 +12,7 @@ class TickTick : GameEnvironment
     public TickTick()
     {
         Content.RootDirectory = "Content";
-        this.IsMouseVisible = true;
+        IsMouseVisible = true;
     }
 
     protected override void LoadContent()
@@ -23,7 +20,7 @@ class TickTick : GameEnvironment
         base.LoadContent();
 
         screen = new Point(1440, 825);//создание точки
-        this.SetFullScreen(false);
+        SetFullScreen(false);
         gameStateManager.AddGameState("titleMenu", new TitleMenuState());
         gameStateManager.AddGameState("helpState", new HelpState());
         gameStateManager.AddGameState("playingState", new PlayingState(Content));
