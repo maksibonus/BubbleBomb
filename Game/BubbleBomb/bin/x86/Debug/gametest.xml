@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<test>
+  <question text="Кто является создателем языка C++?">
+    <answer>Герберт Шилдт.</answer>
+    <answer right="true">Бьерн Страуструп.</answer>
+    <answer>Денис Ричи.</answer>
+  </question>
+  <question text="Как прошёл твой день?">
+    <answer right="true">Плохо.</answer>
+    <answer right="true">Очень плохо.</answer>
+  </question>
+</test>

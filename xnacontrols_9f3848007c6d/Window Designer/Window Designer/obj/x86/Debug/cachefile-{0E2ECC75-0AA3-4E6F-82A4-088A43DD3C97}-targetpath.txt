@@ -1,0 +1,2 @@
+Content\logo.xnb
+Content\controls.xml

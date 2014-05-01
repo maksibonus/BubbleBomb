@@ -1,0 +1,2 @@
+C:\as\code\RamGec XNA Controls\RamGecXNAControlsContent\obj\x86\Release\ResolveAssemblyReference.cache
+D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGecXNAControlsContent\obj\x86\Release\Themes.contentprojResolveAssemblyReference.cache

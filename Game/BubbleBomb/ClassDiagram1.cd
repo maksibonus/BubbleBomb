@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BubbleBomb">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAQ=</HashCode>
+      <FileName>BubbleBomb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clouds" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gameobjects\Clouds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatrollingEnemy">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAAIAAAAA=</HashCode>
+      <FileName>gameobjects\enemies\PatrollingEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerFollowingEnemy">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gameobjects\enemies\PlayerFollowingEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rocket" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAABBAAAAAAAAAAAAAAAAAAAAAAAIAEAAA=</HashCode>
+      <FileName>gameobjects\enemies\Rocket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparky" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAgAAIAQAAA=</HashCode>
+      <FileName>gameobjects\enemies\Sparky.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Turtle" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAIAQAAA=</HashCode>
+      <FileName>gameobjects\enemies\Turtle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnpredictableEnemy">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gameobjects\enemies\UnpredictableEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAKAghAABBEgAAQAABgEgAAAAAARAAAAAAEAAAA=</HashCode>
+      <FileName>gameobjects\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tile" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAIAAAAAgAAAAAAgAAAAIABAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>gameobjects\Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TileField" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gameobjects\TileField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimerGameObject" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAABAAAAEAAAABAAAgAAAAIAAQAAAAAAAA=</HashCode>
+      <FileName>gameobjects\TimerGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisibilityTimer" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAIAAAAAAAQQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gameobjects\VisibilityTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WaterDrop" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAAQAAAABAAAAAABAAAAAQAAAAAACAAAAEQAAA=</HashCode>
+      <FileName>gameobjects\WaterDrop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgCCgAAEAJAIAAAAACAkMgACACAAAAAAACAgBAAA=</HashCode>
+      <FileName>level\Level.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Button" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>menu\Button.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelButton" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEACABAAAAAAAAAAAAEAAAAEACQBIAAAAQAAEAAA=</HashCode>
+      <FileName>menu\LevelButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Result" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameOverState" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACgAAAAAgAAAAAAAAAAAAQAAEAAAAAAAAAQAAA=</HashCode>
+      <FileName>states\GameOverState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HelpState" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>states\HelpState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelFinishedState" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACgAAAAAgAAAAAAAAAAAAQAAEAAAAAAAAAQAAA=</HashCode>
+      <FileName>states\LevelFinishedState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelMenuState" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>states\LevelMenuState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayingState" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACEEgAABgAAAAAAAABAAAEEEEEDAAAAAAAAQAA=</HashCode>
+      <FileName>states\PlayingState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TitleMenuState" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAAA=</HashCode>
+      <FileName>states\TitleMenuState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TileType" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAgAAAAAAA=</HashCode>
+      <FileName>gameobjects\Tile.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

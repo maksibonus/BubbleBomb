@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Default\skin.png</Source>
+      <Name>Default\skin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGec XNA Controls\bin\x86\Debug\Themes\Default\skin.xnb</Output>
+      <Time>2012-04-02T22:21:47+03:00</Time>
+    </Item>
+    <Item>
+      <Source>DefaultGreen\skin.png</Source>
+      <Name>DefaultGreen\skin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGec XNA Controls\bin\x86\Debug\Themes\DefaultGreen\skin.xnb</Output>
+      <Time>2012-04-02T22:21:47+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Default\font.spritefont</Source>
+      <Name>Default\font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGec XNA Controls\bin\x86\Debug\Themes\Default\font.xnb</Output>
+      <Time>2014-04-27T12:18:41.9065982+03:00</Time>
+    </Item>
+    <Item>
+      <Source>DefaultGreen\font.spritefont</Source>
+      <Name>DefaultGreen\font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGec XNA Controls\bin\x86\Debug\Themes\DefaultGreen\font.xnb</Output>
+      <Time>2012-04-02T22:21:47+03:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGecXNAControlsContent\</RootDirectory>
+      <LoggerRootDirectory>D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGec XNA Controls\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGecXNAControlsContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\GitHub\BubbleBomb\xnacontrols_9f3848007c6d\RamGec XNA Controls\bin\x86\Debug\Themes\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-04-10T12:30:33.6326847+03:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,6 @@
+D:\GitHub\BubbleBomb\TickTick5\GameTests\bin\Debug\gametest.xml
+D:\GitHub\BubbleBomb\TickTick5\GameTests\bin\Debug\GameTests.dll
+D:\GitHub\BubbleBomb\TickTick5\GameTests\bin\Debug\GameTests.pdb
+D:\GitHub\BubbleBomb\TickTick5\GameTests\obj\Debug\GameTests.dll
+D:\GitHub\BubbleBomb\TickTick5\GameTests\obj\Debug\GameTests.pdb
+D:\GitHub\BubbleBomb\TickTick5\GameTests\obj\Debug\GameTests.csprojResolveAssemblyReference.cache

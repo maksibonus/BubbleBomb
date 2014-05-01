@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamGec XNA Controls", "RamGec XNA Controls\RamGec XNA Controls.csproj", "{E7CA3538-0526-4D6E-BE66-384A39A207DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo\Demo.csproj", "{5BE9501C-4751-465D-988F-90960D444048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoContent", "Demo\DemoContent\DemoContent.contentproj", "{08A2CBA8-0843-47B6-8E59-7EFE3DC8ACD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themes", "RamGecXNAControlsContent\Themes.contentproj", "{0683B9C2-A14A-43BB-B7E4-742444A317D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Window Designer", "Window Designer\Window Designer\Window Designer.csproj", "{9D9B910E-7B9B-4E4A-B651-0F8D9C994A2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Window DesignerContent", "Window Designer\Window DesignerContent\Window DesignerContent.contentproj", "{0E2ECC75-0AA3-4E6F-82A4-088A43DD3C97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7CA3538-0526-4D6E-BE66-384A39A207DB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E7CA3538-0526-4D6E-BE66-384A39A207DB}.Debug|x86.ActiveCfg = Debug|x86
+		{E7CA3538-0526-4D6E-BE66-384A39A207DB}.Debug|x86.Build.0 = Debug|x86
+		{E7CA3538-0526-4D6E-BE66-384A39A207DB}.Release|Any CPU.ActiveCfg = Release|x86
+		{E7CA3538-0526-4D6E-BE66-384A39A207DB}.Release|x86.ActiveCfg = Release|x86
+		{E7CA3538-0526-4D6E-BE66-384A39A207DB}.Release|x86.Build.0 = Release|x86
+		{5BE9501C-4751-465D-988F-90960D444048}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5BE9501C-4751-465D-988F-90960D444048}.Debug|x86.ActiveCfg = Debug|x86
+		{5BE9501C-4751-465D-988F-90960D444048}.Debug|x86.Build.0 = Debug|x86
+		{5BE9501C-4751-465D-988F-90960D444048}.Release|Any CPU.ActiveCfg = Release|x86
+		{5BE9501C-4751-465D-988F-90960D444048}.Release|x86.ActiveCfg = Release|x86
+		{5BE9501C-4751-465D-988F-90960D444048}.Release|x86.Build.0 = Release|x86
+		{08A2CBA8-0843-47B6-8E59-7EFE3DC8ACD9}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{08A2CBA8-0843-47B6-8E59-7EFE3DC8ACD9}.Debug|x86.ActiveCfg = Debug|x86
+		{08A2CBA8-0843-47B6-8E59-7EFE3DC8ACD9}.Release|Any CPU.ActiveCfg = Release|x86
+		{08A2CBA8-0843-47B6-8E59-7EFE3DC8ACD9}.Release|x86.ActiveCfg = Release|x86
+		{0683B9C2-A14A-43BB-B7E4-742444A317D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0683B9C2-A14A-43BB-B7E4-742444A317D1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0683B9C2-A14A-43BB-B7E4-742444A317D1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0683B9C2-A14A-43BB-B7E4-742444A317D1}.Release|x86.ActiveCfg = Debug|Any CPU
+		{9D9B910E-7B9B-4E4A-B651-0F8D9C994A2A}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9D9B910E-7B9B-4E4A-B651-0F8D9C994A2A}.Debug|x86.ActiveCfg = Debug|x86
+		{9D9B910E-7B9B-4E4A-B651-0F8D9C994A2A}.Debug|x86.Build.0 = Debug|x86
+		{9D9B910E-7B9B-4E4A-B651-0F8D9C994A2A}.Release|Any CPU.ActiveCfg = Release|x86
+		{9D9B910E-7B9B-4E4A-B651-0F8D9C994A2A}.Release|x86.ActiveCfg = Release|x86
+		{9D9B910E-7B9B-4E4A-B651-0F8D9C994A2A}.Release|x86.Build.0 = Release|x86
+		{0E2ECC75-0AA3-4E6F-82A4-088A43DD3C97}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0E2ECC75-0AA3-4E6F-82A4-088A43DD3C97}.Debug|x86.ActiveCfg = Debug|x86
+		{0E2ECC75-0AA3-4E6F-82A4-088A43DD3C97}.Release|Any CPU.ActiveCfg = Release|x86
+		{0E2ECC75-0AA3-4E6F-82A4-088A43DD3C97}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
